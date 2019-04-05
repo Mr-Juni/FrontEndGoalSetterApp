@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  > 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="images/Untitled.png" type="image/x-icon" />
+        <title>Goal SETTER</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+        <script src="js/preloader.js"></script> 
+        <link rel="stylesheet" href="main/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main/animate.css">
+        <link rel="stylesheet" href="main/style.css">
+        <link rel="stylesheet" href="main/part_2.css">
+        <link rel="stylesheet" href="fontawesome-free-5.6.1-web/css/all.min.css">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="js/javascript.js"></script>
+</head>
+
+<body class="Dashboard">
+    <div class="se-pre-con"><p align='center'></p></div>
+<div class="container-fluid px-0">
+  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav">
+      <div class="container-fluid px-0">
+          <div class="navbar-header">
+              <img class=" animated fadeIn" id="img_logo" src="images/GROUP 3.2.png" alt="">
+          </div>
+              <ul class="nav navbar-nav ml-auto">             
+                  <li class="active" >
+                   
+                      <div class="welcome_user_img animated fadeIn" id="user_dash_img"></div>
+
+                  </li>
+              </ul>
+      </div>
+  </nav>
+  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav" style="background: lightgrey; height: 30px;">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="active">
+          <pre id="welcome_pre" class="animated fadeIn"><p class="welcome_user_name"  id="user_dash_name"></p></pre>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+ <!--body-->
+<div class="container-fluid px-0">
+  <div class="dashboard_holder row" >
+    <div class="col-lg-2 border col-md-12 col-sm-12" >
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link profill" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <i class="fa fa-bars out1"></i> Dashboard
+            </a>
+            <a class="nav-link profill" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"> 
+              <i class="fa fa-user out2"></i> User Management
+            </a>
+            <a class="nav-link profill" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"> 
+              <img id="goal_icon" src="images/soccer.png"> My Goals
+            </a>
+            <a class="nav-link profill" id="v-pills-add-tab" data-toggle="pill" href="#v-pills-add" role="tab" aria-controls="v-pills-add" aria-selected="false">
+              <i class="fa fa-pen"></i> Add Goals
+            </a> 
+            <a class="nav-link profill" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">  
+              <i class="fa fa-comments out4"></i> Messages
+            </a>
+            <a class="nav-link profill" id="v-pills-activities-tab" data-toggle="pill" href="#v-pills-activities" role="tab"
+              aria-controls="v-pills-activities" aria-selected="false">
+              <i class="fa fa-chart-line out5"></i> Activities
+            </a>
+            <a class="nav-link profill" style="cursor:pointer;" data-toggle="pill"  role="tab" aria-controls="v-pills-settings" aria-selected="false" id="logoutForm">
+              </i><i class="fas fa-sign-out-alt out"></i>Logout
+            </a> 
+            
+      </div>
+    </div>
+    
+        <div class="col-lg-7 border col-md-12 col-sm-12" style="background-color:#F8F8FF;">
+            <div class="tab-content" id="v-pills-tabContent" >
+                <div  class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" style="height: 85.5vh;">               
+                          <div class="spinner-border text-muted" id="spin"></div>
+                          <div class="modal-header">
+                            <h4 class="modal-title"><i class="fa fa-bars out1"></i> Dashboard</h4>
+                          </div>
+                          <!-- id="all_goals" -->
+                          <div  id="all_goals" style="overflow-y:scroll; overflow: none; width: 100%; height: 49vh;"></div>  
+                          <!--View Box-->
+                          <div class="view_box_1" id="over_view_slides">
+                              <li>You have completed 15 goals and 400 tasks.</li>
+                              <li>You still have 10 uncompleted goals and 200 uncompleted tasks.</li>
+                              <li></li>
+                          </div>
+                          <div class="view_box_2" id="activities_slide">
+                            <li>You have completed 15 goals and 400 tasks.</li>
+                            <li>You still have 10 uncompleted goals and 200 uncompleted tasks.</li>
+                            <li></li>
+                          </div>
+                </div>   
+
+            
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="height: 85.5vh;"> 
+                    <div class="spinner-border text-muted" id="spin_profile"></div>
+                    <div style="color:#2d80ce" id="profile">
+                      <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-user out2"></i> Manage Profile</h4>
+                      </div>
+                       
+                      <div style="height: 65vh;">
+                            <div class="profile-img text-center" id="show_image"></div>
+                            <div class="profile-name col-12 text-center">
+                              <h4 id="bigName"> </h4>
+                            </div>
+                           
+                              <div class="tab-content ml-1" id="myTabContent">
+                              <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                              </div>
+                              </div>   
+                            <table class="table" style="color:#2d80ce"  >
+                              <tbody id="user_details">         
+                              </tbody>
+                            </table>
+                      </div>
+                      </div>
+                      <div id="edit_profile">
+                       </div>           
+                </div>
+
+
+
+                <div class="tab-pane fade" id="v-pills-add" role="tabpanel" aria-labelledby="v-pills-add-tab" style="height: 85.5vh;">
+                  <div id="spin_bx_add_goal">
+                    <div class="spinner-border text-muted" id="spin_edit"></div>
+                  </div>
+                  <div id="show_goal_dash" class="msg_alert_box">
+                  
+                  </div>
+                    <div class="modal-header">
+                        <h4 class="modal-title"><img id="goal_icon_h" src="images/soccer.png"> Add A Goal</h4>
+                    </div>
+                      
+                <!-- Modal body -->      
+                    <form action="" method="get" id="getGoal">
+                         <div class="modal-body" style=" height: 72vh;" >
+                                <label style="color:#3768a0;">Title :</label><br>
+                                <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#3768a0" class="form-control" id="title" type="text" placeholder="Title">
+                                <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_title"></p>
+                  
+                              <div class="row">
+                                <div class="col-6">
+                                    <label style="color:#3768a0;">Begin date :</label>
+                                    <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="begin_date" type="date" value="">
+                                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_begin"></p>
+                                </div>
+                                <div class="col-6">
+                                    <label style="color:#3768a0;">Due Date :</label>
+                                    <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="due_date" type="date" value=""> 
+                                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_due"></p>
+                                </div>
+                              </div>
+                              <div class="row"> 
+                                <div class="col-12">
+                                    <label style="color:#3768a0;">Magnitude :</label>
+                                    <select class="form-control" id="level">
+                                        <option value="Easy">Easy</option>
+                                        <option value="Challenging">Challenging</option>
+                                        <option value="Difficult">Difficult</option>
+                                    </select>
+                                    <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control" id="description" placeholder="How do you want to acheive this goal?"></textarea>
+                                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_desc"></p>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
+                                <button type="submit" class="btn btn-primary" data-save="modal">Save</button>
+                                <!-- </ANY>   -->
+                              </div>
+                        </div>
+                    </form>       
+                </div>
+                
+
+
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" style="height: 85.5vh;">
+                    <div class="spinner-border text-muted" id="spin_2"></div>
+                      <div class="modal-header">
+                        <h4 class="modal-title"><img id="goal_icon_h" src="images/soccer.png">My Goals</h4>
+                      </div>
+                      <div id="allgoals_point">
+                        
+                          
+                      </div>   
+                </div>
+
+
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" style="height: 85.5vh;">
+                  
+                  <div class="modal-header">
+                      <h4><i class="fa fa-comments out4"></i> All Messages</h4>
+                    </div>
+                  </div>
+                    <div class="tab-pane fade" id="v-pills-activities" role="tabpanel" aria-labelledby="v-pills-activities-tab" style="height: 85.5vh;">
+                      <div class="modal-header">
+                        <h4><i class="fa fa-chart-line out5"></i> All Activities</h4>
+                      </div>
+                      <div id="all_activities">
+                        <div class="spinner-border text-muted" id="spin_all_activities"></div>  
+                      </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 border text-center col-md-12 col-sm-12">
+        <div id="activities" style="background-color:#e6e6e6; height:82vh; margin-top:10px;">
+              <h6 style="color:#0F799E;"><div style="height:10px;"></div><i class="fa fa-chart-line out5"></i> Recent Activities</h6>
+            <hr style="background:#e6e6e6;">
+              
+              <div id="dash_highlight" class="animated fadeIn">  
+                <div class="spinner-border text-muted" id="spin_activities"></div>
+              </div>
+        </div>
+    </div>
+    </div>
+</div>
+   
+
+
+<!--create-->
+<div class="container mt-4">
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+              
+        <!-- Modal Header -->
+          <div class="modal-header">
+              <h4 class="modal-title">Edit Goal</h4>
+              <a href="" class="btn btn-danger" data-dismiss="modal">Close</a>
+          </div>
+                
+          <!-- Modal body -->      
+              <form action="" method="get" id="getGoal">
+                <input type="hidden" value="">
+                  <div class="modal-body">
+                      <label style="color:#3768a0;">Title :</label><br>
+                      <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#2d80ce" class="form-control" id="title" type="text"> 
+  
+                <div class="row">
+                  <div class="col-3">
+                      <label style="color:#3768a0;">Begin date :</label>
+                      <input style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="begin_date" type="date" value="">
+                  </div>
+                <div class="col-3">
+                </div>
+                  <div class="col-3">
+                      <label style="color:#3768a0;">Due Date :</label>
+                      <input style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="due_date" type="date" value=""> 
+                  </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-12">
+                        <label style="color:#3768a0;">Magnitude :</label>
+                        <select class="form-control" id="level">
+                            <option>Easy</option>
+                            <option>Challenging</option>
+                            <option>Difficult</option>
+                      </select>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                      <div class="col-12">
+                          <label style="color:#2d80ce">How do you want to acheive this goal?</label>
+                          <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="4" cols="48" class="form-control" id="description"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
+                        <button type="submit" class="btn btn-primary" data-save="modal">Save</button>
+                    <!-- </ANY>   -->
+                  </div>
+              </form>               
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!--creat task-->
+<div class="container mt-4">
+  <div class="modal fade" id="myModal4">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div id="spin_bx_add_task">
+            <div class="spinner-border text-muted" id="spin_edit"></div>
+          </div>
+           <!-- Modal Header -->
+          <div id="show_task" class="msg_alert_box cls">
+
+          </div>
+        <div class="modal-header">
+             <div id="view_goals">
+                <h4 class="modal-title" id="goal_title_to_task"></h4>
+             </div>
+
+                <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+                  Close
+                </button>
+            <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal">
+                <button class="fa fa-pen btn btn-primary" type="button"  data-toggle="modal" data-target="#myModal" data-save="modal"> 
+                  Edit
+                </button><br>
+            </ANY> -->
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body" style="background-color:#e6e6e6;">
+          <form id="task_save">
+              <div class="row">
+                <div class="col-12">
+                   <label style="color:#3768a0;">Task Title :</label>
+                    <input type="text" class="form-control" style="width:100%;" id="task_title">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label style="color:#3768a0;">Begin date :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_begin_date" type="date"
+                    value="">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_begin"></p>
+                </div>
+                <div class="col-6">
+                  <label style="color:#3768a0;">Due Date :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_due_date" type="date"
+                    value="">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0">Write short about this task?</label>
+                  <textarea style="border: 1px solid #3768a0; color:#3768a0" rows="3.5" cols="48" class="form-control" id="task_description"></textarea>
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc"></p>
+                </div>
+              </div>
+            <!-- <label style="color:black">Reminder :</label>
+            <select class="form-control" multiple>
+                <option selected>Choose</option>
+                <option>One the day</option>
+                <option>1 day</option>
+                <option>2 days</option>
+                <option>3 days</option>
+                <option>1 week before</option>
+                <option>Daily</option>
+                <option>weekly</option>
+                <option>monthly</option>
+                <option>yearly</option>
+            </select> -->
+            <input id="goal_id_task" type="hidden" value="">
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary add_another">Add another</button>
+                <button type="submit" id="save_btn" class="btn btn-primary">Save</button>
+              </div>
+          </form>
+              
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--edit profile-->
+<div class="container mt-4">
+    <div class="modal fade" id="myModal5">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div id="spin_bx">
+            <div class="spinner-border text-muted" id="spin_edit"></div>
+          </div>
+          <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title" id="bigName2">Edit Profile</h4>
+                  <button class="btn btn-primary cls" type="button"  data-target="#myModal" data-dismiss="modal"> 
+                    Close
+                  </button>
+          </div>
+          <div id="show_success" class="msg_alert_box cls"></div>
+          <div id="show_edit" class="msg_alert_box cls"></div>
+          <div class="modal-body">  
+          <form class="form" id="upload_img">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <div id="show_image_edit" class="profile-img" style="width:111px; height:120px; margin:auto 0; display: inline-block;"></div><br>
+                    <div id="box_set"  class="upload-btn-wrapper">
+                      <button class="btn_img" style="cursor:pointer;">Upload Photo </button>
+                      <input class="img_set" type="file" id="user_image" value="user.jpg"/>
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button  type="submit" id="img_save" class="btn_img">Save Photo</button>
+                    </div>
+                </div>
+              </div>
+        </form>
+        <form id="edit">
+              <div class="row" >
+                <div class="col-6">
+                    <label style="color:#3768a0;">Name :</label>
+                  <div>
+                    <i class="fa fa-user-circle icon1"></i>
+                    <input type="text" style="width:100%; color:grey;"  class="field" placeholder="Name"  id="name_edit" value="">
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_name_edit"></p>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <label style="color:#3768a0;">Mobile :</label>
+                <div>
+                    <i class="fa fa-phone icon1"></i>
+                    <input type="text" style="width:100%; color:grey;" class="field" placeholder="Mobile"  id="phone_number_edit" value="">
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_phone_edit"></p>
+                </div>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-6">
+                    <label style="color:#3768a0;">Email :</label>
+                  <div>
+                    <i class="fa fa-envelope icon1"></i>
+                    <input type="text" style="width:100%; color:grey;"  class="field" placeholder="Email" id="email_edit" value="">
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_email_edit"></p>
+                  </div>   
+                </div>
+                <div class="col-6">
+                  <label style="color:#3768a0;">Account Type:</label>
+                  <div>
+                    <select  style="width:100%; color:grey; height:40px;"  class="field" id="account_type">
+                      <option selected value="Personal"> Personal</option>
+                      <option value="Team">Team</option>
+                      <option value="Company">Company</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+    
+            <div class="row">
+                <div class="col-6">
+                  <label style="color:#3768a0;">Password :</label>
+                  <div>
+                    <i class="fa fa-lock icon1"></i>
+                    <input type="password" style="width:100%; color:grey;" class="field" placeholder="Password"" id="password">
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_pwd_edit"></p>
+                  </div>
+                </div>
+              <div class="col-6">
+                  <label style="color:#3768a0;">Confirm Password :</label>
+                <div>
+                    <i class="fa fa-lock icon1"></i>
+                    <input type="password" style="width:100%; color:grey;"  class="field" placeholder="Confirm_password" id="password_confirmation">
+                </div>      
+              </div>
+            </div>
+              <button type="submit" name="register" id="registe">Strike Save</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Delete Profile -->
+  <div class="container mt-4">
+    <div class="modal fade" id="myModal6">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div id="spin_bx_delete">
+              <div class="spinner-border text-muted" id="spin_edit"></div>
+            </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" id="bigName2">Delete Profile</h4>
+              <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="delete_profile">
+                <div class="row">
+                  <div class="col-12">
+                    <label style="color:#3768a0;">Password :</label>
+                    <p></p>
+                    <div>
+                      <i class="fa fa-lock icon1"></i>
+                      <input type="password" style="width:100%; color:grey;" class="field" placeholder="Password"" id="pwd_del">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_pwd_del"></p>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" name="register" style="width:100%;" id="registe">Strike Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal view -->
+  <div class="modal fade" id="exampleModalLong">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/js/jquery.min.js"></script>
+<script src="js/js/bootstrap.min.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/javascript.js"></script>
+<script src="js/login.js"></script>
+<script src="js/goal.js"></script>
+<script src="js/image_upload.js"></script>
+<script src="js/edit_profile.js"></script>
+<script src="js/delete_profile.js"></script>
+<script src="js/dash_task_create.js"></script>
+<script src="js/activities.js"></script>
+</body>
+</html>
+    <script>
+      
+      $(document).ready(function () {
+        //  $('#myModal4').modal('toggle')
+        //    var today = new Date();
+        // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        // var dateTime = date + ' ' + time;
+           $(document).on("change", ".img_set", function () {
+
+              var img_file = $("#user_image").val();
+              if (img_file !== "user-jpg") {
+                $("#img_save").show();
+                $("#box_set").hide();
+                $("#registe").hide();
+              } else {
+                $("#img_save").hide();
+                $("#box_set").show();
+                $("#registe").show();
+              }
+            });
+            $(document).on("click", ".cls", function () {
+                $("#img_save").hide();
+                $("#box_set").show();
+                $("#show_success").hide();
+                $("#registe").show();
+                $("#err_name_edit").hide();
+                $("#err_phone_edit").hide();
+                $("#err_email_edit").hide();
+                $("#err_pwd_edit").hide();
+                $("#show_edit").hide();
+                $("#show_task").hide();
+
+            });
+              $(document).on("click", ".add_another", function () {
+                   $("#task_title").val("");
+                   $("#task_begin-date").val("");
+                   $("#task_due_date").val("");
+                   $("#task_description").val("");
+                });
+              $(document).on("click", "#show_goal_dash", function () {
+                   $("#show_goal_dash").hide();
+                    });
+               
+
+      });
+   
+    </script>

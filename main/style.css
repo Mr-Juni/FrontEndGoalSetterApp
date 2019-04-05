@@ -1,0 +1,528 @@
+/*preloader*/
+.no-js #loader {  display: none;  }
+.js #loader {     display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background: url("../images/ajax-loader.gif") center no-repeat #fff;                 
+}
+.se-pre-con p{
+    position: fixed;
+    left: 50%;
+    text-align: center;
+    top: 50%;
+    z-index: 9999999;
+    color: rgb(163,73,164);
+    font-weight: bold;   
+    font-family: cursive;           
+}
+/*body*/
+.body_2{
+    background: url("../images/climb-the-activity-silhouette-dom.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+#activities_icon {
+    max-width:20px;
+    max-height:20px;
+    margin-right: auto;
+    margin-left:auto;
+}
+.carousel{
+    transition: 0.3s ease-in-out;
+}
+.home_img {
+    width: 50%;
+}
+
+#img_off {
+    width: 100%;
+    border-radius: 50px;
+}
+
+#img_off:hover {
+   transform: scale(1.02);
+}
+
+#con2 {
+    margin-top: 10%;
+    position: absolute;
+    z-index:999999;
+}
+#con{
+    margin-top: 8%;
+    position: absolute;
+    z-index:999999;
+    text-align: center;
+    box-shadow: 0 0 10px #2d80ce;
+    margin-left: 50%;
+    height: 60vh;
+    background:rgb(0, 0, 0, 0.5);
+    width:50%;
+}
+
+#text_header {
+      padding-top: 10px;
+    color:#ffffff; font-size:30px;
+}
+
+.home_text {
+    font-size: 15px;
+}
+#img_logo {
+    width:150px; 
+    height: 30px;
+}
+#home{
+    border-radius: 4px;
+    border:1px solid;
+    color: #ffdc17;
+    font-weight: bold;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #ffdc17;
+    background: rgb(29, 32, 101);
+}
+#btn_sty {
+   transition: 1s all ease;
+}
+#btn_sty:hover {
+    transform: scale(1.003);
+    color:rgb(255, 220, 23);
+    background:rgb(0, 0, 0, 0.5);
+}
+#get{
+    border-radius: 4px;
+    border:1px solid;
+    color: #1d2065;
+    padding: 5px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgb(255, 220, 23);
+    transition: 1s all linear;
+}
+#get:hover{
+    box-shadow: 0 0 10px #e6e6e6;
+    color:white;
+    background-color: rgb(0, 0, 0, 0.5);
+    transform: scale(1.0001);
+    color: rgb(255, 220, 23);
+}
+#home:hover{
+    box-shadow: 0 0 10px #e6e6e6;
+}
+a{
+    color: #161616;
+    text-decoration: none !important;
+}
+.goal{
+    color: #ffffff;
+    text-align: center;
+}
+.breath {
+    animation: pulse 1s infinite alternate;
+    -webkit-animation: pulse 2s infinite alternate;
+}
+.breath1 {
+    animation: pulse 3s infinite alternate;
+    -webkit-animation: pulse 3s infinite alternate;
+}
+span{
+    display: block;
+    margin-top: 2%;
+    text-align: justify;
+    padding: 2%;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    color: #f1f1f1;
+    background-color:#2d80ce;
+}
+/*home*/
+#img-move {
+     width: 40%;
+}
+#home_slogan {
+       width: 60%;
+}
+#home_slogan  h5, #home_slogan_t  h5{
+  margin-top:4%; 
+  margin-bottom:6%; 
+  font-size: 30px; 
+  font-weight: bold;
+  text-align: center; 
+  color:rgb(10, 10, 10);
+  font-family: COMIC SANS MS;	
+}
+#home_slogan{
+    color:grey; 
+}
+#home_slogan_t  p{
+    color:grey; 
+}
+#home_slogan_t {
+       width: 60%;
+}
+#img-move-t-desk {
+     width: 40%;
+}
+#img-move-t-phone {
+    display: none;
+}
+.home{
+    color:#ffffff; 
+    font-weight: bold;
+    margin-top: 5%;
+}
+.get{
+    padding: 15px;
+    color: #ffffff;
+    width: 30%;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+}
+.fakeimg {
+    background:#1d2065;
+  }
+.help{
+    background: #4399ff;
+    background-size: cover;
+    background-position: center;
+}
+.achieving{
+    background: #1d2065;
+}
+.hw_img {
+   width: 70%; 
+   padding: 20px;
+}
+/*login*/
+.login{
+    background-image: url("../images/architecture-business-city-358612.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+.main4{
+    height:auto;
+    width: 40%;
+    padding: 10px 55px 40px;
+    box-shadow: 0 0 10px #2d80ce;
+    font-size: 13px;
+    background: rgb(0, 0, 0, 0.5);
+}
+
+
+.primary{
+    width: 97.7%;
+    color: #4399ff;
+    background-color: #ffffff;
+}
+
+/*registration page*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+hr{
+    margin-bottom: 30px;
+}
+.cont{
+    position:relative;
+}
+.main3{
+    height:auto;
+    width: 40%;
+    padding: 10px 55px 40px;
+    box-shadow: 0 0 10px #2d80ce;
+    font-size: 13px;
+    background: rgb(0, 0, 0, 0.5);
+}
+select{
+    width: 97.7%;
+    height: 34px;
+    padding-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-size: 16px;
+    border: none;
+    color: #ffffff;
+}
+label{
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+#register {
+    background-color: #ffffff;
+    font-size: 20px;
+    margin-top: 5px;
+    border: 1px solid #0F799E;
+    padding: 7px 35px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 1px 0px #13506D;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 97.7%;
+}
+#register:hover{
+    background: linear-gradient(#0389f7 5%, #078ee7 100%);
+}
+
+.sign{
+    background-image: url("../images/architecture-business-city-358612.jpg");
+    background-repeat:  no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 105vh;
+}
+.fa-check{
+    float: left;
+    padding: 10px;
+    min-width: 50px;
+}
+.form{
+    border: none;
+}
+
+.input-field {
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    padding-left: 40px;
+    border: 0.2px solid rgba(0,0,0,0.1);
+    background: #ffffff; /* Fallback color */
+    background: #fcfdfd; /* Black background with 0.5 opacity */
+    border: none;
+  }
+    .acct-field {
+    color: #ffffff;
+    width: 100%;
+    outline: none;
+    padding-left: 40px;
+    background: #2d80ce; /* Fallback color */
+    background: #2d80ce; /* Black background with 0.5 opacity */
+    border: none;
+  }
+.icon {
+    color: #0446fd;
+    padding: 10px;
+    min-width: 50px;
+    position:absolute;
+  }
+  
+/*dashdoard*/
+.Dashboard{
+    background-color: #ffffff;
+    height: 100vh;
+}
+.Dashboard .bg-nav{
+    background-color: #3768a0;
+}
+.fieldset{
+    text-align: center;
+}
+.dash{
+    height: 86vh;
+    width: 100%;
+}
+.out1{
+    color:green;
+}
+.out2{
+    color:red;
+}
+.out3{
+    color:#e6b800;
+}
+.out4{
+   color:black; 
+}
+.out5{
+    color:#666633; 
+ }
+.out{
+    color:rgb(150, 6, 6);
+}
+#myModal4{
+    display: none;
+}
+.field{
+    color: #ffffff;
+    padding: 10px;
+    outline: none;
+    padding-left: 40px;
+    border: 0.2px solid rgba(0,0,0,0.1);
+    background: #e6e6e6; 
+    border: none;
+}
+.icon1{
+    color: #3768a0;
+    padding: 10px;
+    min-width: 50px;
+    position:absolute;
+  }
+.inputs{
+    width: 50%;
+}
+h4{
+    color:#3768a0;
+}
+#registe {
+    background-color: #ffffff;
+    font-size: 20px;
+    margin-top: 5px;
+    border: 1px solid #0F799E;
+    padding: 7px 35px;
+    color:#3768a0;
+    text-shadow: 0px 1px 0px #13506D;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 47%;
+    transition: 1s all ease;
+}
+#registe:hover{
+    background: linear-gradient(#0389f7 5%, #078ee7 100%);
+    color:white;
+    transform: scale3d(1.003);
+}
+.icons{
+    color: #3768a0;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    animation:5s heartBeat infinite alternate;
+    -webkit-animation: 5s heartBeat infinite alternate;
+}
+#spin{
+    display:none;
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+#spin_2{
+    display:none;
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+#all_goals{
+    overflow-y:scroll; 
+    overflow: none; 
+    height: 300px;
+}
+/* width */
+#all_goals::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+   /* Handle */
+  #all_goals::-webkit-scrollbar-thumb {
+    background:#3768a0; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  #all_goals::-webkit-scrollbar-thumb:hover {
+    background: #e6e6ee; 
+    border: 1px solid #3768a0; 
+  }
+ 
+#allgoals_point{
+    overflow-y:scroll; 
+    overflow: none; 
+    height: 500px;
+  
+}
+/* width */
+#allgoals_point::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+ 
+   
+  /* Handle */
+  #allgoals_point::-webkit-scrollbar-thumb {
+    background:#3768a0; 
+    opacity: 0.5;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  #allgoals_point::-webkit-scrollbar-thumb:hover {
+    background: #e6e6ee; 
+    border: 1px solid #3768a0;
+  }
+ 
+/*profile*/
+.profill{
+    color:#3768a0;
+    margin-top: 5%; 
+    transition: 1s all ease; 
+}
+.profile .bg-nav{
+    background-color: #2a7abf;
+}
+.profill:hover{
+    transform: scale(1.003);
+    color: #3768a0;
+    background-color:#e6e6e6;
+}
+.profile{
+    background-color: #ffffff;
+}
+/*footer*/
+hr{
+    background-color: #000000;
+}
+.follow{
+    color:#000000;
+    text-align: center;
+}
+footer{
+    background-color:#3768a0;
+}
+footer ul.social li a i {
+    margin-right: 5%;
+    color:#ffffff; 
+	font-size:20px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+footer ul.social li:hover a i {
+    font-size:30px;
+    color: #2d80ce
+}
+footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+footer ul.quick-links li a i{
+	margin-right: 10px;
+}
+footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
