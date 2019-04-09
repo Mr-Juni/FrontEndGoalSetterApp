@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  > 
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" href="images/Group 8.png" type="image/x-icon" />
+        <link rel="icon" href="images/gs2.jpg" type="image/x-icon" />
         <title>Sign Up — GOALSETTER</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
         <script src="js/preloader.js"></script> 
@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="main/part.css">
 </head>
 <body>
+    
         <div class="se-pre-con"><p align='center'></p></div>
     <div id="loader" class="fixed-top">
         <div class="progress" id="login_form">
@@ -32,8 +33,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <a class="nav-link" href="index.html"><img class=" animated fadeIn" id="img_logo" src="images/GROUP 3.2.png"
-                    alt=""></a>
+            <a class="nav-link" href="index.html"><p style="color:white; margin: 0; font-size: 20px;font-family: 'Yatra One', cursive;"><img class=" animated fadeIn"
+                    id="img_logo" src="images/gs2.jpg" alt=""> GoalSetter</p></a>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item mx-1">
@@ -55,39 +56,34 @@
             <label>Name :</label>
             <div>
                 <i class="fa fa-user-circle icon"></i>
-                <input style="color: white;" class="input-field form-control" type="text" placeholder="Name"  name="name" id="name">
+                <input style="color: black;" class="input-field form-control" type="text" placeholder="Name"  name="name" id="name">
                 <p style='color:tomato; margin:0; font-weight: bold;' id="err_name"></p>
             </div>
             <label>Mobile :</label>
             <div>
                 <i class="fa fa-phone icon"></i>
-                <input style="color: white;" class="input-field form-control" type="text" placeholder="Mobile"  name="name" id="phone_number">
+                <input style="color: black;" class="input-field form-control" type="text" placeholder="Mobile"  name="name" id="phone_number">
                 <p style='color:tomato; margin:0; font-weight: bold;' id="err_number"></p>
             </div>
             <label>Email</label>
             <div>
                 <i class="fa fa-envelope icon"></i>
-                <input style="color: white;" class="input-field form-control" type="text" placeholder="Email" name="email" id="email">
+                <input style="color: black;" class="input-field form-control" type="text" placeholder="Email" name="email" id="email">
                 <p style='color:tomato; margin:0; font-weight: bold;' id="err_email"></p>
             </div>
             <label>Password :</label>
             <div>
                 <i class="fa fa-lock icon"></i>
-                <input style="color: white;" class="input-field form-control" type="password" placeholder="Password" name="password" id="password">
+                <input style="color: black;" class="input-field form-control" type="password" placeholder="Password" name="password" id="password">
                 <p style='color:tomato; margin:0; font-weight: bold;' id="err_pwd"></p>
             </div>
             <label>Confirm Password :</label>
             <div>
                 <i class="fa fa-lock icon"></i>
-                <input style="color: white;" class="input-field form-control" type="password" placeholder="Confirm_password" name="cpassword" id="confirm_password">
+                <input style="color: black;" class="input-field form-control" type="password" placeholder="Confirm_password" name="cpassword" id="confirm_password">
                 <p style='color:tomato; margin:0; font-weight: bold;' id="err_cpwd"></p>
             </div>
-            <label>Account type:</label>
-            <select style="color: white;"  class="acct-field form-control" id="accounttype">
-                    <option selected value="Personal"> Personal</option>
-                    <option value="Team">Team</option>
-                    <option value="Company">Company</option>
-                </select>
+            
             <button type="submit" id="btn_sty" class="btn primary" onclick="move()" style="font-weight:bold;">Register</button>
             <p class="text-center" style="color:#ffffff; margin-top: 5px;">
                 Already have an account ! <a style="color: #ffdc17" href="login.html">Sign In</a></p>

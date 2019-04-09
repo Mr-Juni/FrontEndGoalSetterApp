@@ -24,6 +24,24 @@
     align-items: center;
 
 }
+#show_com {
+    display: flex;
+    justify-content: center;
+    height:auto;
+     width: 40%;
+     margin: auto;
+    align-items: center;
+
+}
+#show_success_team {
+    display: flex;
+    justify-content: center;
+    height:auto;
+     width: 40%;
+     margin: auto;
+    align-items: center;
+
+}
 .sign{
    height: 125vh;
 }

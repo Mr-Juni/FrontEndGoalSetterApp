@@ -53,10 +53,12 @@ function oneGoalget() {
 
 
         if (goal.goal_status == 0) {
-            var status = "Not Completed"
+            var status = "<p style='color:tomato;'>Not Completed</p>"
         } else if (goal.goal_status == 1) {
-            var status = "Completed"
+            var status = "<p style='color:green;'>Completed</p>"
         }
+        //Insert the goal status into the complete hidden input 
+        _('#goal_status').value = `${goal.goal_status}`;
 
         _('#goalName').innerHTML = `${goal.title}`;
         _("#goal_detail").innerHTML = `
@@ -98,9 +100,6 @@ function oneGoalget() {
 
 
     }).catch(function (err) {
-        console.log(err.response);
-        _('#spin').style.display = "none";
-        _("#goal_detail").innerHTML = `${err.response.data.data.message}`;
 
     })
 }
@@ -231,11 +230,9 @@ if (delete_goal) {
 
         _("#spin_bx_del_goal").style.display = "block";
         const deleteLink = "https://goalsetterapi.herokuapp.com/api/goals/" + goal_id + "/delete";
-        console.log(deleteLink)
 
         axios.delete(deleteLink, options).then(function (response) {
 
-            console.log(response.data);
             _("#spin_bx_del_goal").style.display = "none";
 
             location.replace("dashboard.html")
@@ -247,8 +244,6 @@ if (delete_goal) {
                 // _("#loader").style.display = "none";
                 _("#spin_bx_del_goal").style.display = "none";
 
-                console.log(err.response)
-
             }
 
 
@@ -258,4 +253,69 @@ if (delete_goal) {
 
 }
 
+completeGoal = _("#completeGoal");
 
+if (completeGoal) {
+
+    completeGoal.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let goal_status = _("#goal_status").value;
+
+        if (goal_status == "0") {
+            goal_status = 1;
+        }else if(goal_status == "1"){
+            goal_status = 0;
+        }
+
+        const token = localStorage.getItem("goaltoken");
+
+        const options = {
+            headers: {
+                Authorization: token,
+            }
+        }
+
+        const goalData = {
+            goal_status: goal_status
+        }
+
+        _("#spin_bx_delete").style.display = "block";
+       
+        const goalLink = "https://goalsetterapi.herokuapp.com/api/goals/"+goal_id+"/status";
+
+        axios.put(goalLink, goalData, options).then(function (response) {
+            _("#spin_bx_delete").style.display = "none";
+            
+            _("#show_com").style.display = "block";
+            let msg = response.data.data.goalCompleted;
+            let msg2 = response.data.data.goalUnCompleted;
+
+            if (msg) {
+                var val = msg;
+            } else if (msg2) {
+                var val = msg2
+            }
+
+            _("#show_com").innerHTML = `
+                <div class="alert alert-success design_alert" role="alert"> 
+                   ${val}
+                    <p style="color:grey; float:right; margin-right: 25px;">Close</p>
+                </div>
+                `;
+            setTimeout(function () {
+                _("#show_com").style.display = "none";
+                $("#complete").modal("toggle");
+            }, 3000);
+           
+            oneGoalget();
+            allTask();
+
+        }).catch(function (err) {
+            _("#spin_bx_delete").style.display = "none";
+
+        
+        })
+
+    })
+
+}

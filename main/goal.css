@@ -65,14 +65,7 @@
     background: rgb(0, 0,0,0.2);
     display: none; 
 }
-#spin_bx_task_delete {
-    position: absolute;
-    height:100%;
-    width: 100%;
-    z-index: 999999;
-    background: rgb(0, 0,0,0.2);
-    display: none; 
-}
+
 #spin_bx_task_edit{
     position: absolute;
     height:100%;

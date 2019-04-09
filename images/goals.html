@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  > 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="images/Untitled.png" type="image/x-icon" />
+        <title>Your Goal</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+        <script src="js/preloader.js"></script> 
+        <link rel="stylesheet" href="main/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main/animate.css">
+        <link rel="stylesheet" href="main/style.css">
+        <link rel="stylesheet" href="main/part_2.css">
+        <link rel="stylesheet" href="main/goal.css">
+        <link rel="stylesheet" href="fontawesome-free-5.6.1-web/css/all.min.css">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="js/javascript.js"></script>
+</head>
+
+<body class="Dashboard">
+    <div class="se-pre-con"><p align='center'></p></div>
+<div class="container-fluid px-0">
+  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav">
+      <div class="container-fluid px-0">
+          <div class="navbar-header">
+              <img class=" animated fadeIn" id="img_logo" src="images/GROUP 3.2.png" alt="">
+          </div>
+              <ul class="nav navbar-nav ml-auto">             
+                  <li class="active" >
+                   
+                      <div class="welcome_user_img animated fadeIn" id="user_dash_img_goal"></div>
+
+                  </li>
+              </ul>
+      </div>
+  </nav>
+  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav" style="background: lightgrey; height: 30px;">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="active">
+          <pre id="welcome_pre" class="animated fadeIn"><p class="welcome_user_name"  id="user_dash_name_goal"></p></pre>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+ <!--body-->
+<div class="container-fluid px-0">
+  <div class="dashboard_holder row" >
+    <div class="col-lg-2 border col-md-12 col-sm-12" >
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link profill"  href="dashboard.html" >
+          <i class="fa fa-bars out1"></i> Dashboard
+      </a>
+      <a class="nav-link profill" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+          <img id="goal_icon_u" src="images/soccer.png"> Goal Information
+      </a>
+        <a class="nav-link profill" id="v-pills-add-tab" data-toggle="pill" href="#v-pills-add" role="tab" aria-controls="v-pills-add"
+          aria-selected="false">
+          <i class="fa fa-pen"></i> Edit Goal
+        </a>
+        <a class="nav-link profill" id="v-pills-add-tab" data-toggle="pill" href="#v-pills-add_task" role="tab" aria-controls="v-pills-add"
+          aria-selected="false">
+          <i class="fa fa-pen" style="color:hotpink;"></i> Add Task
+        </a>
+      <a class="nav-link profill" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-all_task" role="tab" aria-controls="v-pills-all_task" aria-selected="false"> 
+        <img id="goal_icon" style="width:20px; height:20px;" src="images/task.png"> My Tasks
+      </a>
+      <a class="nav-link profill" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-del" role="tab"
+        aria-controls="v-pills-del" aria-selected="false" style="cursor:pointer; color:tomato;"id="delete">
+      <i class="fas fa-trash-alt"></i></i> Delete Goal
+      </a>
+
+      <a class="nav-link profill" > 
+       
+      </a>
+       
+            
+      </div>
+    </div>
+    
+        <div class="col-lg-7 border col-md-12 col-sm-12" style="background-color:#F8F8FF;">
+            <div class="tab-content" id="v-pills-tabContent" >
+                <div  class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" style="height: 85.5vh;">               
+                          <div class="spinner-border text-muted" id="spin"></div>
+                          <div class="modal-header">
+                            <h4 class="modal-title"><img id="goal_icon" src="images/soccer.png">My Goal</h4>
+                          </div>
+
+                          <div  style="overflow-y:scroll; overflow: none; width: 100%; height: 60vh;">
+                              <div class="profile-name col-12 text-center">
+                                <h4 id="goalName"> </h4>
+                              </div>
+                            <table class="table" style="color:#2d80ce">
+                              <tbody id="goal_detail">
+                              </tbody>
+                            </table>
+                            <div id="desc"></div>
+                          </div>  
+                          <div id="btn_active">
+                          </div>
+                          <!--View Box-->
+                </div> 
+
+             <!--this is to add the goal-->     
+            <div class="tab-pane fade" id="v-pills-add" role="tabpanel" aria-labelledby="v-pills-add-tab" style="height: 85.5vh;">
+                <div id="spin_bx_add_goal">
+                  <div class="spinner-border text-muted" id="spin_edit"></div>
+                </div>
+                <div id="show_goal_dash" class="msg_alert_box">
+
+                </div>
+                <div class="modal-header">
+                  <h4 class="modal-title"><img id="goal_icon" src="images/soccer.png">Edit Goal</h4>
+                </div>
+            
+              <!-- Modal body -->
+              <form action="" method="get" id="getGoal">
+                <div class="modal-body" style=" height: 72vh;">
+                  <label style="color:#3768a0;">Title :</label><br>
+                  <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#3768a0" class="form-control" id="edit_title"
+                    type="text" placeholder="Title">
+                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_title"></p>
+            
+                  <div class="row">
+                    <div class="col-6">
+                      <label style="color:#3768a0;">Begin date :</label>
+                      <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_begin_date"
+                        type="date" value="">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_begin"></p>
+                    </div>
+                    <div class="col-6">
+                      <label style="color:#3768a0;">Due Date :</label>
+                      <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_due_date"
+                        type="date" value="">
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_due"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label style="color:#3768a0;">Magnitude :</label>
+                      <select class="form-control" id="edit_level">
+                        <option value="Easy">Easy</option>
+                        <option value="Challenging">Challenging</option>
+                        <option value="Difficult">Difficult</option>
+                      </select>
+                      <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control" id="edit_description"
+                        placeholder="How do you want to acheive this goal?"></textarea>
+                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_desc"></p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
+                    <button type="submit" class="btn btn-primary">Update Goal</button>
+                    <!-- </ANY>   -->
+                  </div>
+                </div>
+              </form>
+            </div>
+
+<!--Deete A FORM -->
+                <div class="tab-pane fade" id="v-pills-del" role="tabpanel" aria-labelledby="v-pills-del-tab">
+                    <div id="spin_bx_del_goal">
+                      <div class="spinner-border text-muted" id="spin_edit"></div>
+                    </div>
+                 
+                  <div class="modal-header">
+                    <h4 class="modal-title"><img id="goal_icon" src="images/soccer.png">Delete Goal</h4>
+                  </div>
+                
+                  <div id="del_goal_tab">
+                    <div class="profile-name col-12 text-center">
+                      <h4 id="head_del">Are you sure you want to delete this goal?</h4>
+                    </div><br>
+                    <div id="del_div">
+                      <form id="delete_goal">
+                        <input id="del_goal_btn" class="btn" type="submit" value="Delete Goal">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+<!--View ALL Task -->
+              <div class="tab-pane fade" id="v-pills-all_task" role="tabpanel" aria-labelledby="v-pills-all_task-tab" style="height: 85.5vh;">
+                <div class="spinner-border text-muted" id="spin_2"></div>
+                <div class="modal-header">
+                  <h4 class="modal-title"><img id="goal_icon" src="images/task.png">My Tasks</h4>
+                </div>
+                <div id="alltask_point"></div>
+              </div>
+
+    <!--Add task-->
+    <div class="tab-pane fade" id="v-pills-add_task" role="tabpanel" aria-labelledby="v-pills-add_task-tab" style="height: 85.5vh;">
+      <div id="spin_add_task">
+        <div class="spinner-border text-muted" id="spin_edit"></div>
+      </div>
+      <div id="show_task_dash" class="msg_alert_box">
+    
+      </div>
+      <div class="modal-header">
+        <h4 class="modal-title"><img id="goal_icon" src="images/task.png">Add Task</h4>
+      </div>
+    
+      <!-- Modal body -->
+      <form id="add_a_task">
+        <div class="modal-body" style=" height: 72vh;">
+          <label style="color:#3768a0;">Title :</label><br>
+          <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#3768a0" class="form-control" id="task_title"
+            type="text" placeholder="Title">
+          <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title"></p>
+    
+          <div class="row">
+            <div class="col-6">
+              <label style="color:#3768a0;">Begin date :</label>
+              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_begin_date"
+                type="date" value="">
+              <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_begin"></p>
+            </div>
+            <div class="col-6">
+              <label style="color:#3768a0;">Due Date :</label>
+              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_due_date"
+                type="date" value="">
+              <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due"></p>
+            </div>
+          </div><br>
+          <div class="row">
+              <div class="col-6">
+                <label style="color:#3768a0;">Begin Time :</label>
+                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                  id="begin_time" type="time" value="">
+                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
+              </div>
+              <div class="col-6">
+                <label style="color:#3768a0;">Due Time :</label>
+                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                  id="due_time" type="time" value="">
+                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
+              </div>
+            </div>
+          <div class="row">
+              <div class="col-12">
+                <label style="color:#3768a0;">Reminder :</label>
+                <select class="form-control" id="addReminder">
+                  <option value=""></option>
+                  <option value="30m">Every 30 minutes</option>
+                  <option value="1h">Every hour</option>
+                  <option value="3h">Every 3 hours</option>
+                  <option value="6h">Every 6 hours</option>
+                  <option value="Ed">Everyday</option>
+                  <option value="E3d">Every 3 days</option>
+                  <option value="Ew">Every Week</option>
+                  <option value="Em">Every month</option>
+                </select>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-12">
+              <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control" id="task_description"
+                placeholder="Your task description..."></textarea>
+              <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
+            <button type="submit" class="btn btn-primary">Add Task</button>
+            <!-- </ANY>   -->
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+            </div>
+        </div>
+
+ 
+        <div class="col-lg-3 border text-center col-md-12 col-sm-12">
+            <div id="activities" style="background-color:#e6e6e6; height:82vh; margin-top:10px;">
+              <h6 style="color:#0F799E;">
+                <div style="height:10px;"></div><i class="fa fa-chart-line out5"></i> Recent Activities
+              </h6>
+              <hr style="background:#e6e6e6;">
+              <div id="dash_highlight" class="animated fadeIn">
+                  <div class="spinner-border text-muted" id="spin_activities"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- --------------------------Modal view -----------////////////////////////////////////////////////////////////////////////////////////////////////////////////////////------------------------------>
+<div class="modal fade" id="taskInfo">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Task Information</h5>
+        <button style="padding:5px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+          <div style="overflow-y:scroll; overflow: none; width: 100%; height: 60vh;">
+            <div class="profile-name col-12 text-center">
+              <h4 id="task_name"></h4>
+            </div>
+            <table class="table" style="color:#2d80ce">
+              <tbody id="task_detail">
+                <tr>
+                  <td>BEGIN DATE</td>
+                  <td id="task_begin"></td>
+                </tr>
+                <tr>
+                  <td>DUE DATE</td>
+                  <td id="task_due"></td>
+                </tr>
+                <tr>
+                  <td>STATUS</td>
+                  <td id="task_status"></td>
+                </tr>
+                <tr>
+                  <td>DATE CREATED</td>
+                  <td id="task_created"></td>
+                </tr>
+              </tbody>
+            </table>
+            <tr>
+              <p style="color:darkcyan; margin-left:10px;">TASK DESCRIPTION</p>
+              <div class="description_box" id="task_desc">
+
+              </div>
+            </tr>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taskedit">Edit</button>
+        <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#del_one_task">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container mt-4">
+    <div class="modal fade" id="stat">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div id="spin_bx">
+            <div class="spinner-border text-muted" id="spin_edit"></div>
+          </div>
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="bigName2">Statistics</h4>
+            <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+          <div id="show_success" class="msg_alert_box">
+  
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                  <label style="color:#3768a0; font-weight: bold;">Total Tasks:</label>
+                  <div>
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Task" id="totalTask" disabled>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <label style="color:#3768a0; font-weight: bold;">Completed Tasks:</label>
+                  <div>
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Completed" id="totalCompleted" disabled>
+                  </div>
+                </div>
+  
+                <div class="col-6">
+                  <label style="color:#3768a0; font-weight: bold;">Uncompleted Tasks:</label>
+                  <div>
+
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Uncompleted" id="totalUncompleted" disabled>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!--create-->
+
+<div class="modal fade" id="taskedit">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div id="spin_bx_task_edit">
+        <div class="spinner-border text-muted" id="spin_edit"></div>
+      </div>
+        <div id="show_task_edit" class="msg_alert_box .cls">
+        
+        </div>
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Task</h4>
+        <a href="" class="btn btn-danger" data-dismiss="modal">Close</a>
+      </div>
+        <div class="modal-body">
+
+          <form id="edit_a_task">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0;">Title :</label><br>
+                  <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#2d80ce" class="form-control" id="title"
+                    type="text">
+                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title_edit"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label  style="color:#3768a0;">Begin date :</label>
+                  <input class="form-control" style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="begin_date" type="date" value="">
+                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_begin_edit"></p>
+                </div>
+                <div class="col-6">
+                  <label style="color:#3768a0;">Due Date :</label>
+                  <input class="form-control" style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="due_date"
+                    type="date" value="">
+                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due_edit"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label style="color:#3768a0;">Begin Time :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                    id="begin_time" type="time" value="">
+                  <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
+                </div>
+                <div class="col-6">
+                  <label style="color:#3768a0;">Due Time :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                    id="due_time" type="time" value="">
+                  <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0;">Reminder :</label>
+                  <select class="form-control" id="editReminder">
+                    <option value=""></option>
+                    <option value="30m">Every 30 minutes</option>
+                    <option value="1h">Every hour</option>
+                    <option value="3h">Every 3 hours</option>
+                    <option value="6h">Every 6 hours</option>
+                    <option value="Ed">Everyday</option>
+                    <option value="E3d">Every 3 days</option>
+                    <option value="Ew">Every Week</option>
+                    <option value="Em">Every month</option>
+                  </select>
+                </div>
+              </div>
+          
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#2d80ce">How do you want to acheive this goal?</label>
+                  <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="2" cols="48" class="form-control" id="description"></textarea>
+                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc_edit"></p>
+                </div>
+              </div>
+          
+              <div class="modal-footer">
+                <input id="task_id_edit" type="hidden" value="">
+                <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
+                <button type="submit" class="btn btn-primary" data-save="modal">Strike Save</button>
+                <!-- </ANY>   -->
+              </div>
+            </div>
+          </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taskedit">Edit</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_one_task">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Complete  Goal-->
+  <div class="container mt-4">
+    <div class="modal fade" id="complete">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div id="spin_bx_delete">
+            <div class="spinner-border text-muted" id="spin_edit"></div>
+          </div>
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="bigName2">Strike Complete</h4>
+            <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="delete_profile">
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0;">Are you sure this goal is completed ?</label>
+                  <p style="font-size:10px; color:tomato;">Please note all tasks related to this goal will be marked completed and this goal will be deleted after 3 days</p>
+                  <button type="submit" name="register" id="registe" style="width:100%;">Strike Complete</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Delete Task-->
+  <div class="container mt-4">
+    <div class="modal fade" id="del_one_task">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div id="spin_bx_task_delete">
+            <div class="spinner-border text-muted" id="spin_edit"></div>
+          </div>
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="bigName2">Delete Task</h4>
+            <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="delete_task">
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0;">Are you sure want to delete this task?</label>
+                  <input id="task_id_delete" type="hidden" value="">
+                  <button class="del_task_btn" type="submit" name="register" id="registe" style="width:100%;">Strike Delete</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--This is the silent dive to let the activities work for the goal page-->
+  <div id="all_activities" style="display:none"></div>
+  <div id="spin_all_activities" style="display:none"></div>
+<script src="js/js/jquery.min.js"></script>
+<script src="js/js/bootstrap.min.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/goal_dash.js"></script>
+<script src="js/task_dash.js"></script>
+<script src="js/activities.js"></script>
+<script src="js/goals_tasks.js"></script>
+</body>
+</html>
+    <script>
+      $(document).ready(function () {
+        
+           $(document).on("change", ".img_set", function () {
+
+              var img_file = $("#user_image").val();
+              if (img_file !== "user-jpg") {
+                $("#img_save").show();
+                $("#box_set").hide();
+                $("#registe").hide();
+              } else {
+                $("#img_save").hide();
+                $("#box_set").show();
+                $("#registe").show();
+              }
+            });
+            $(document).on("click", ".cls", function () {
+                $("#img_save").hide();
+                $("#box_set").show();
+                $("#show_success").hide();
+                $("#registe").show();
+                $("#show_task_edit").hide();
+            });
+        $(document).on("click", "#show_goal_dash",  function () {
+          $("#show_goal_dash").hide();
+        });
+          $(document).on("click",'#show_task_dash', function () {
+          $("#show_task_dash").hide();
+        });
+         $(document).on("click", '.task_view', function () {
+              var task_id = $(this).data('getid');
+              var task_title = $(this).data('gettitle');
+              var task_begin = $(this).data('getbegin');
+              var task_due = $(this).data('getdue');
+              var task_status = $(this).data('getstatus');
+              var task_desc = $(this).data('getdesc');
+              var task_created = $(this).data('getcreated');
+
+
+              $("#task_id_edit").val(task_id);
+              $("#task_id_delete").val(task_id);
+              $("#task_name").html(task_title);
+              $("#task_begin").html(task_begin);
+              $("#task_due").html(task_due);
+              $("#task_status").html(task_status);
+              $("#task_desc").html(task_desc);
+              $("#task_created").html(task_created);
+
+              $("#title").val(task_title);
+              $("#begin_date").val(task_begin);
+              $("#due_date").val(task_due);
+              $("#description").val(task_desc);
+
+            
+          //  new Date().toLocaleDateString();
+        });
+        
+        
+
+      });
+   
+    </script>
+
+

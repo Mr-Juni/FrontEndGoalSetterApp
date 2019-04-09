@@ -16,9 +16,10 @@ const checkToken = !! localStorage.getItem("goaltoken");
     }
 
 }
+
 profileUser();
 // View Users Profile
-function profileUser() {
+function profileUser(allow = "") {
 
   profile = _("#profile");
 
@@ -36,23 +37,24 @@ function profileUser() {
 
     const token = localStorage.getItem("goaltoken");
 
-
-    console.log(token)
-
     const options = {
       headers: {
         Authorization: token,
       }
     }
-
+    if (allow == "1") {
+      _('#show_image').style.display = "block";
+    }
+    _("#show_image").innerHTML = `<div style="height:30px;"></div><img id="img_loader" src="images/text_loader.gif">`;
+    _("#show_image_edit").innerHTML = `<div style="height:30px;"></div><img  id="img_loader" src="images/text_loader.gif">`;
 
     axios.get(profileUrl, options).then(function (response) {
-
+      _('#show_image').style.display = "block";
       const user = response.data.data.user;
       localStorage.setItem('user', user)
-      console.log(user.name)
       if(user) {
         _('#spin_profile').style.display = "none";
+        
       }
 
       _('#bigName').innerHTML = `Name: ${user.name}`;

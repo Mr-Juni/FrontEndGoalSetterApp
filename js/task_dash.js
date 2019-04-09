@@ -25,27 +25,26 @@ axios.get(viewgoalsUrl, options).then(function (response) {
 
 
     if (user_tasks) {
-        console.log(response.data);
-
+        _('#alltask_point').innerHTML = ``;
         for (let task of user_tasks) {
 
             if (task.task_status == 0) {
-                var status_task = "Not Completed"
+                var status_task = "<p style='color:tomato;'>Not Completed</p>"
             } else if (task.task_status == 1) {
-                var status_task = "Completed"
+                var status_task = "<p style='color:green;'>Completed</p>"
             }
-
+            
             _('#alltask_point').innerHTML += `
              <div style="height:10px;"></div>
             <div class="container-fluid box_part">
                 <div class="row  goal_plate">
-                    <div class="col-5"style="margin-top:10px;  font-weight:bold;" id="tiny_font_title">
+                    <div class="col-5"style="margin-top:15px;  font-weight:bold;" id="tiny_font_title">
                     <img id="goal_icon" style="width:20px; height:20px;" src="images/task.png"> ${task.task_title}
                     </div>
-                    <div id="tiny_font" class="col-5"style="margin-top:10px;">
-                             <b>BEGIN:</b> ${task.begin_date} - <b>DUE:</b> : ${task.due_date}
+                    <div id="tiny_font" class="col-5"style="margin-top:15px;">
+                             ${task.begin_date} — ${task.due_date}
                     </div> 
-                    <div id="btn_reduce" class="col col-2" style="margin-top:10px;">
+                    <div id="btn_reduce" class="col col-2" style="margin-top:15px;">
                     <a class="btn task_view"  data-getid="${task.id}" data-gettitle="${task.task_title}" data-getbegin="${task.begin_date}" data-getdue="${task.due_date}" data-getstatus="${status_task}"  data-getdesc="${task.description}" data-getcreated="${task.created_at}" data-toggle="modal" data-target="#taskInfo">View</a>
                     </div>
                 </div>
@@ -92,7 +91,9 @@ if (add_a_task) {
         const description = _("#task_description").value;
         const begin_date = _("#task_begin_date").value;
         const due_date = _("#task_due_date").value;
-
+        const begin_time = _("#begin_time").value;
+        const due_time = _("#due_time").value;
+        const add_reminder = _("#addReminder").value;
 
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -127,7 +128,10 @@ if (add_a_task) {
             task_title: task_title,
             description: description,
             begin_date: begin_date,
-            due_date: due_date
+            due_date: due_date,
+            begin_time: begin_time,
+            due_time: due_time,
+            reminder: add_reminder
         }
         
         const taskLink = "https://goalsetterapi.herokuapp.com/api/goals/" + goal_id + "/tasks/create";
@@ -208,6 +212,9 @@ if (edit_a_task) {
         const begin_date = _("#begin_date").value;
         const due_date = _("#due_date").value;
         const task_id = _("#task_id_edit").value;
+        const begin_time = _("#begin_time").value;
+        const due_time = _("#due_time").value;
+        const edit_reminder = _("#editReminder").value;
 
 
         var today = new Date();
@@ -243,7 +250,10 @@ if (edit_a_task) {
             task_title: task_title,
             description: description,
             begin_date: begin_date,
-            due_date: due_date
+            due_date: due_date,
+            begin_time: begin_time,
+            due_time: due_time,
+            reminder:editReminder
         }
 
         const taskLink = "https://goalsetterapi.herokuapp.com/api/goals/" + goal_id + "/tasks/" + task_id +"/edit";

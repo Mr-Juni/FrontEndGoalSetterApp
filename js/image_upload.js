@@ -52,13 +52,16 @@ if (upload_img) {
 
                         localStorage.setItem('dash_image', dash_image);
 
-                        profileUser();
+                        var allow = "1";
+
+                        profileUser(allow);
                     }
                 }, 1000);
 
             if (afterWork) {
                     _("#spin_bx").style.display = "none";
                     _("#registe").style.display = "block";
+                    _("#user_image").value = "user.jpg";
                     _("#img_save").style.display = "none";
                     _("#box_set").style.display = "block";
                     
@@ -74,9 +77,6 @@ if (upload_img) {
                     _("#registe").style.display = "block";
                     _("#img_save").style.display = "none";
                     _("#box_set").style.display = "block";
-
-                    console.log(err.response)
-                    console.log(err.response.data.data.message)
                    
                     if (err.response.data.hasOwnProperty("error")) {
                             let msg = err.response.data.data.message
@@ -87,17 +87,15 @@ if (upload_img) {
                                 </div>
                                 `;
                         }
-                    if (err.response.data) {
-                        let msg = err.response.data
+                    if (err.response.status === 400) {
                         _("#show_success").style.display = "block";
                         _("#show_success").innerHTML = `
                             <div class="alert alert-danger design_alert" role="alert"> 
-                                ${msg} Access, you need to be logged in first!
+                                Image file too large, only use below 500kb !
                                 <p style="color:grey; float:right; margin-right: 25px;">Close</p>
                             </div>
                             `;
-                    }
-                    
+                    }               
                     if (err.response.status === 422) {
                         if (err.response.data.hasOwnProperty("user_image")) {
                             let msg = err.response.data.user_image

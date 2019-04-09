@@ -1,0 +1,202 @@
+@media screen and (max-width: 1150px) {
+       .home_img {
+          width: 70%;
+         }
+         #login_form {
+           width: 60%;
+        }
+        #con {
+
+            height: 69vh;
+      
+         } 
+       
+}
+
+@media screen and (max-width: 950px) {
+      #login_form {
+           width: 70%;
+        }
+}
+@media screen and (max-width: 768px) {
+    .img img{
+        width: 100%;
+    }
+    .main3{
+        height:auto;
+        width: 100%;
+        margin-left: 5%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+    }
+       #home_slogan, #home_slogan_t {
+        width: 100%;
+        }
+    .main4{
+        height:70vh;
+        width: 80%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+    }
+    #img_logo {
+        float:right;
+    }
+    .home_img {
+        width: 100%;
+    }
+    #con {
+        margin-top: 80px;
+        width:100%;
+        margin-left: 0%;
+        height: 75vh;
+  
+     } 
+   
+     #img-move {
+      width: 100%;
+     }
+    
+    .sign{
+        background-image: url("../images/architecture-business-city-358612.jpg");
+        background-repeat:  no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 105vh;
+    }
+     #home_slogan_t {
+       width: 100%;
+    }
+    #img-move-t-desk {
+        display: none
+    }
+    #img-move-t-phone {
+       display: block;
+       width: 100%;
+    }
+       #login_form {
+           width: 80%;
+        }
+      .login_head_text {
+        font-size: 22px;
+    }
+  
+}
+@media screen and (max-width: 576px) {
+  
+    .main3{
+        height:auto;
+        width: 80%;
+        margin: 0;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+    }
+    .main4{
+        height:70vh;
+        width: 80%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+    }
+    .sign{
+        background-image: url("../images/architecture-business-city-358612.jpg");
+        background-repeat:  no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 105vh;
+    }
+    #text_header {
+        font-size:20px;
+    }
+    #home_slogan  h5, #home_slogan_t  h5{
+    font-size:25px;
+    }
+   
+    .hw_img {
+   width: 100%; 
+   padding: 10px;
+    }
+     .hove_sweet span {
+        width: 100%;
+       font-size: 15px;
+       text-align: left;
+    }
+      #login_form {
+           width: 100%;
+        }
+}
+@media screen and (max-width: 400px) {
+      #login_form {
+           padding: 15px;
+        }
+ 
+} 
+
+@media screen and (max-width: 360px) {
+    .main3{
+        height:auto;
+        width: 80%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+        margin: 0;
+    }
+     .body{
+        background-image: url("../images/images.png");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 90vh;
+    }
+    .main4{
+        height:70vh;
+        width: 80%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+    }
+    .sign{
+        background-image: url("../images/architecture-business-city-358612.jpg");
+        background-repeat:  no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 105vh;
+    }
+      #text_header {
+        font-size:15px;
+    }
+     #login_form {
+           padding: 10px;
+        }
+    #show_success {
+          padding: 10px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .main3{
+        height:auto;
+        width: 80%;
+        padding: 10px 55px 40px;
+        box-shadow: 0 0 10px;
+        font-size: 13px;
+        margin: 0;
+    }
+    .sign{
+        background-image: url("../images/architecture-business-city-358612.jpg");
+        background-repeat:  no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 111vh;
+    }
+}
+ /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+ @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 5px;}
+    .sidebar a {font-size: 18px;}
+}

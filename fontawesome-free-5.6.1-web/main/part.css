@@ -1,0 +1,62 @@
+.design_alert {
+    width:100%;
+    height: auto;
+}
+.msg_show{
+    height:auto;
+    width: 40%;
+    padding: 0px 55px 20px;
+    font-size: 13px;
+}
+#login_form label {
+    font-weight: bold;
+}
+#recoverForm label {
+    font-weight: bold;
+}
+
+#show_success {
+    display: flex;
+    justify-content: center;
+    height:auto;
+     width: 40%;
+     margin: auto;
+    align-items: center;
+
+}
+.sign{
+   height: 125vh;
+}
+.login {
+    height: 100vh;
+}
+#loader {
+    display: none;
+}
+#mybar {
+    width: 10%;
+}
+@media  screen and (max-width: 1150px) {
+    #show_success {
+     width: 60%;
+
+}
+}
+@media  screen and (max-width: 950px) {
+    #show_success {
+     width: 70%;
+
+}
+}
+@media  screen and (max-width: 760px) {
+    #show_success {
+     width: 80%;
+
+}
+}
+@media  screen and (max-width: 576px) {
+    #show_success {
+     width: 100%;
+
+}
+}

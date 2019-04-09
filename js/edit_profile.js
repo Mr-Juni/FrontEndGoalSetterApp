@@ -8,7 +8,6 @@ if (edit) {
       const name = _("#name_edit").value;
       const email = _("#email_edit").value;
       const phone = _("#phone_number_edit").value;
-      const account_type = _("#account_type").value;
       const pwd = _("#password").value;
       const cpwd = _("#password_confirmation").value;
 
@@ -16,7 +15,6 @@ if (edit) {
           name: name,
           email: email,
           phone_number: phone,
-          account_type: account_type,
           password: pwd,
           password_confirmation: cpwd
       }
@@ -47,7 +45,9 @@ if (edit) {
 
                  localStorage.setItem('name', name);
 
-                profileUser();
+                var allow = "1";
+
+                profileUser(allow);
 
          _("#spin_bx").style.display = "none";
 

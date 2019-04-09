@@ -1,0 +1,320 @@
+.dashboard_holder {
+    width:101%;
+}
+.Dashboard{
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
+.msg_alert_box {
+    position:absolute; z-index: 999999; width: 100%; top:50%;
+}
+.welcome_user_name {
+   position: relative;
+   margin-top: 30px;
+  text-shadow: 2px 2px 1px black, 1px 5px 50px white;
+
+}
+#welcome_pre{
+    color: white;
+}
+.top_nav {
+  box-shadow: 0 0 10px #e6e6e6;
+}
+#Dashboard {
+    overflow-y: none;
+}
+#spin_profile{
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+#spin_profile_2{
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+#spin_bx {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
+    background: rgb(0, 0,0,0.2);
+    display: none;
+}
+#spin_bx_delete {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
+    background: rgb(0, 0,0,0.2);
+    display: none;
+}
+#spin_bx_add_goal {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
+    display: none;
+}
+#spin_bx_add_task {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
+    background: rgb(0, 0,0,0.2);
+    display: none; 
+}
+#spin_edit{
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 999999;
+}
+
+#spin_activities {
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 999999;
+}
+#spin_all_activities {
+     position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 999999;
+}
+.welcome_user_img img {
+    border-radius: 50px;
+    margin-right:100px;
+    margin-left: 100px;
+    border: 1px solid #e6e6e6;
+    top: 3px;
+    right: -80px;
+    position: absolute;
+}
+.icons {
+  font-size: 53px;
+}
+.no_goal_icon {
+    margin:0 auto;
+    font-size: 13px;
+    width: 125px;
+    margin-top: 130px;
+}
+#allgoals_point{
+    overflow-y:scroll; 
+    overflow: none; 
+    height: 72vh;
+}
+#all_activities{
+    overflow-y:scroll; 
+    overflow: none; 
+    height: 72vh;
+}
+.view_box_1 {
+    height: 9vh;
+    width: 100%;
+    background: white;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+.view_box_1 li{
+ color: #0F799E;
+ font-size: 14px;
+ list-style: none;
+ margin-left: 10px;
+}
+.view_box_2 {
+    height: 9vh;
+    width: 100%;
+    background: white;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+.view_box_2 li{
+ color: #0F799E;
+ font-size: 14px;
+ list-style: none;
+ margin-left: 10px;
+}
+#sctivities {
+    overflow: none;
+    overflow-y: scroll;
+
+}
+
+#activities li{
+ color: black;
+ font-size: 12px;
+ margin-top: 2px;
+ list-style: none;
+ text-align:left;
+ height: 9vh;
+ border: 2px solid white;
+ transition: 1s all linear;
+}
+#activities li:hover{
+ background: rgb(0, 0,0,0.1);
+ text-shadow: 2px 2px 1px white, 1px 5px 50px grey;
+ transform: scaleX(1.001);
+}
+#all_activities li{
+ color: black;
+ font-size: 12px;
+ margin-top: 2px;
+ list-style: none;
+ text-align:left;
+ height: 9vh;
+ border: 2px solid white;
+ transition: 1s all linear;
+}
+#all_activities li:hover{
+ background: rgb(0, 0,0,0.1);
+ text-shadow: 2px 2px 1px white, 1px 5px 50px grey;
+ transform: scaleX(1.001);
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.btn:hover {
+background: #e6e6e6;
+color: #0F799E;
+}
+.btn:focus {
+border: 0px;
+}
+.btn_img {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 8px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#img_save {
+ display: none;
+}
+#dash_highlight {
+    margin-top: -30px;overflow: none; overflow-y: scroll; height:72vh;
+}
+/* width */
+#dash_highlight::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+#dash_highlight::-webkit-scrollbar-thumb {
+background:#3768a0; 
+opacity: 0.5;
+border-radius: 5px;
+transition: 1s all ease;
+cursor: pointer;
+}
+
+/* Handle on hover */
+#dash_highlight::-webkit-scrollbar-thumb:hover {
+background: #e6e6ee; 
+border: 1px solid #3768a0;
+transform: scale(1.001);
+}
+
+#user_details {
+    font-size: 15px;
+}
+#goal_icon {
+    max-width:20px;
+    max-height:20px;
+    margin-right: auto;
+    margin-left:auto;
+}
+.goal_plate {
+    height:50px; background:white; font-size:13px; color:#0F799E;
+    transition: 1s all ease;
+}
+.goal_plate:hover {
+     background:#e6e6e6; color:#0F799E;
+     transform: scale3d(1.003);
+     cursor: pointer;
+}
+.msg_alert_box {
+    cursor: pointer;
+}
+#goal_icon_h {
+    max-width:40px;
+    max-height:40px;
+    margin-right: auto;
+    margin-left:auto;
+}
+/* #bigName {
+    font-size: 10px;
+} */
+@media screen and (max-width: 1130px) {
+    .Dashboard{
+         overflow-y:scroll;
+         height: 120vh;
+     }
+     .dashboard_holder {
+            width:103.2%;
+        }
+        #activities li{
+        height:10vh;
+        }
+} 
+@media screen and (max-width: 991px) {
+    .Dashboard{
+         overflow-y:scroll;
+         height: 120vh;
+     }
+     .dashboard_holder {
+            width:103.2%;
+        }
+} 
+
+
+@media screen and (max-width: 768px) {
+     .dashboard_holder {
+            width:104.2%;
+        }
+} 
+@media screen and (max-width: 640px) {
+     .dashboard_holder {
+            width:105%;
+        }
+} 
+
+@media screen and (max-width: 500px) {
+     .dashboard_holder {
+            width:107%;
+        }
+    .box_part {
+        width:200%;
+    }
+} 
+
+@media screen and (max-width: 350px) {
+     .dashboard_holder {
+            width:110%;
+        }
+} 

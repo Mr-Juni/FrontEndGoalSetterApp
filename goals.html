@@ -4,7 +4,7 @@
         <meta charset="UTF-8" >
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  > 
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" href="images/Untitled.png" type="image/x-icon" />
+        <link rel="icon" href="images/gs2.jpg" type="image/x-icon" />
         <title>Your Goal</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
         <script src="js/preloader.js"></script> 
@@ -15,37 +15,44 @@
         <link rel="stylesheet" href="main/goal.css">
         <link rel="stylesheet" href="fontawesome-free-5.6.1-web/css/all.min.css">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
         <script src="js/javascript.js"></script>
-</head>
-
-<body class="Dashboard">
-    <div class="se-pre-con"><p align='center'></p></div>
-<div class="container-fluid px-0">
-  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav">
-      <div class="container-fluid px-0">
-          <div class="navbar-header">
-              <img class=" animated fadeIn" id="img_logo" src="images/GROUP 3.2.png" alt="">
+        </head>
+        
+        <body class="Dashboard">
+        
+          <div class="se-pre-con">
+            <p align="center"></p>
           </div>
-              <ul class="nav navbar-nav ml-auto">             
-                  <li class="active" >
-                   
-                      <div class="welcome_user_img animated fadeIn" id="user_dash_img_goal"></div>
-
+          <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-md navbar-dark bg-nav top_nav">
+              <div class="container-fluid px-0">
+                <div class="navbar-header">
+                  <p style="color:#3768a0; margin: 0; font-size: 20px;font-family: 'Yatra One', cursive;"><img class=" animated fadeIn"
+                      id="img_logo" src="images/gs2.jpg" alt=""> GoalSetter</p>
+                </div>
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="active">
+            
+                    <div class="notification animated fadeIn">
+                      <i class="fa fa-comments out4"></i>
+                      <i class="fa fa-bell" aria-hidden="true"></i>
+                    </div>
+                    <div class="welcome_user_img animated fadeIn" id="user_dash_img_goal"></div>
+            
                   </li>
-              </ul>
-      </div>
-  </nav>
-  <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav" style="background: lightgrey; height: 30px;">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav ml-auto">
-        <li class="active">
-          <pre id="welcome_pre" class="animated fadeIn"><p class="welcome_user_name"  id="user_dash_name_goal"></p></pre>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
+                </ul>
+              </div>
+            </nav>
+            <nav class="navbar  navbar-expand-md navbar-dark bg-nav top_nav" style="background: skyblue; height: 30px;">
+              <div class="container-fluid">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="active">
+                    <pre id="welcome_pre" class="animated fadeIn"><p class="welcome_user_name"  id="user_dash_name_goal"></p></pre>
+                  </li>
+                </ul>
+              </div>
+            </nav>
  <!--body-->
 <div class="container-fluid px-0">
   <div class="dashboard_holder row" >
@@ -89,7 +96,7 @@
                             <h4 class="modal-title"><img id="goal_icon" src="images/soccer.png">My Goal</h4>
                           </div>
 
-                          <div  style="overflow-y:scroll; overflow: none; width: 100%; height: 60vh;">
+                          <div  class="scroll_design">
                               <div class="profile-name col-12 text-center">
                                 <h4 id="goalName"> </h4>
                               </div>
@@ -117,7 +124,7 @@
                 </div>
             
               <!-- Modal body -->
-              <form action="" method="get" id="getGoal">
+              <form id="getGoal">
                 <div class="modal-body" style=" height: 72vh;">
                   <label style="color:#3768a0;">Title :</label><br>
                   <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#3768a0" class="form-control" id="edit_title"
@@ -153,7 +160,7 @@
                   </div>
                   <div class="modal-footer">
                     <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
-                    <button type="submit" class="btn btn-primary">Update Goal</button>
+                    <button type="submit" class="btn btn-primary">Strike Update</button>
                     <!-- </ANY>   -->
                   </div>
                 </div>
@@ -176,7 +183,7 @@
                     </div><br>
                     <div id="del_div">
                       <form id="delete_goal">
-                        <input id="del_goal_btn" class="btn" type="submit" value="Delete Goal">
+                        <input id="del_goal_btn" class="btn" type="submit" value="Strike Delete">
                       </form>
                     </div>
                   </div>
@@ -225,15 +232,45 @@
             </div>
           </div><br>
           <div class="row">
+              <div class="col-6">
+                <label style="color:#3768a0;">Begin Time :</label>
+                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                  id="begin_time" type="time" value="">
+                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
+              </div>
+              <div class="col-6">
+                <label style="color:#3768a0;">Due Time :</label>
+                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                  id="due_time" type="time" value="">
+                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
+              </div>
+            </div>
+          <div class="row">
+              <div class="col-12">
+                <label style="color:#3768a0;">Reminder :</label>
+                <select class="form-control" id="addReminder">
+                  <option value=""></option>
+                  <option value="30m">Every 30 minutes</option>
+                  <option value="1h">Every hour</option>
+                  <option value="3h">Every 3 hours</option>
+                  <option value="6h">Every 6 hours</option>
+                  <option value="Ed">Everyday</option>
+                  <option value="E3d">Every 3 days</option>
+                  <option value="Ew">Every Week</option>
+                  <option value="Em">Every month</option>
+                </select>
+              </div>
+            </div>
+          <div class="row">
             <div class="col-12">
-              <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="4" cols="48" class="form-control" id="task_description"
+              <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control" id="task_description"
                 placeholder="Your task description..."></textarea>
               <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc"></p>
             </div>
           </div>
           <div class="modal-footer">
             <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal"> data-toggle="modal" data-target="#myModal4" -->
-            <button type="submit" class="btn btn-primary">Add Task</button>
+            <button type="submit" class="btn btn-primary">Strike Save</button>
             <!-- </ANY>   -->
           </div>
         </div>
@@ -334,14 +371,14 @@
                 <div class="col-6">
                   <label style="color:#3768a0; font-weight: bold;">Total Tasks:</label>
                   <div>
-                    <input type="text" style="width:100%; color:white;" class="field" placeholder="Total Task" id="Total Task" disabled>
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Task" id="totalTask" disabled>
                   </div>
                 </div>
 
                 <div class="col-6">
                   <label style="color:#3768a0; font-weight: bold;">Completed Tasks:</label>
                   <div>
-                    <input type="text" style="width:100%; color:white;" class="field" placeholder="Total Completed" id="Total Completed" disabled>
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Completed" id="totalCompleted" disabled>
                   </div>
                 </div>
   
@@ -349,7 +386,7 @@
                   <label style="color:#3768a0; font-weight: bold;">Uncompleted Tasks:</label>
                   <div>
 
-                    <input type="text" style="width:100%; color:white;" class="field" placeholder="Total Uncompleted" id="Total Uncompleted" disabled>
+                    <input type="text" style="width:100%; color:#3768a0; font-weight: bold; font-size: 20px;" class="field" placeholder="Total Uncompleted" id="totalUncompleted" disabled>
                   </div>
                 </div>
               </div>
@@ -400,12 +437,41 @@
                   <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due_edit"></p>
                 </div>
               </div>
-          
+              <div class="row">
+                <div class="col-6">
+                  <label style="color:#3768a0;">Begin Time :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                    id="begin_time" type="time" value="">
+                  <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
+                </div>
+                <div class="col-6">
+                  <label style="color:#3768a0;">Due Time :</label>
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
+                    id="due_time" type="time" value="">
+                  <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label style="color:#3768a0;">Reminder :</label>
+                  <select class="form-control" id="editReminder">
+                    <option value=""></option>
+                    <option value="30m">Every 30 minutes</option>
+                    <option value="1h">Every hour</option>
+                    <option value="3h">Every 3 hours</option>
+                    <option value="6h">Every 6 hours</option>
+                    <option value="Ed">Everyday</option>
+                    <option value="E3d">Every 3 days</option>
+                    <option value="Ew">Every Week</option>
+                    <option value="Em">Every month</option>
+                  </select>
+                </div>
+              </div>
           
               <div class="row">
                 <div class="col-12">
                   <label style="color:#2d80ce">How do you want to acheive this goal?</label>
-                  <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="4" cols="48" class="form-control" id="description"></textarea>
+                  <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="2" cols="48" class="form-control" id="description"></textarea>
                   <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc_edit"></p>
                 </div>
               </div>
@@ -419,10 +485,6 @@
             </div>
           </form>
         </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taskedit">Edit</button>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_one_task">Delete</button>
-      </div>
     </div>
   </div>
 </div>
@@ -434,22 +496,26 @@
     <div class="modal fade" id="complete">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+          <div id="show_com" class="msg_alert_box .cls">
+          
+          </div>
           <div id="spin_bx_delete">
             <div class="spinner-border text-muted" id="spin_edit"></div>
           </div>
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title" id="bigName2">Strike Complete</h4>
+            <h4 class="modal-title" id="bigName2">Complete Goal</h4>
             <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
               Close
             </button>
           </div>
           <div class="modal-body">
-            <form id="delete_profile">
+            <form id="completeGoal">
               <div class="row">
                 <div class="col-12">
                   <label style="color:#3768a0;">Are you sure this goal is completed ?</label>
                   <p style="font-size:10px; color:tomato;">Please note all tasks related to this goal will be marked completed and this goal will be deleted after 3 days</p>
+                  <input id="goal_status" type="hidden" value="">
                   <button type="submit" name="register" id="registe" style="width:100%;">Strike Complete</button>
                 </div>
               </div>
@@ -500,6 +566,7 @@
 <script src="js/goal_dash.js"></script>
 <script src="js/task_dash.js"></script>
 <script src="js/activities.js"></script>
+<script src="js/goals_tasks.js"></script>
 </body>
 </html>
     <script>
