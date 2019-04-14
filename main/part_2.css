@@ -46,7 +46,13 @@
     height:100%;
     width: 100%;
     z-index: 999999;
-    background: rgb(0, 0,0,0.2);
+    display: none;
+}
+#spin_bx_com {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
     display: none;
 }
 #spin_bx_add_goal {
@@ -83,12 +89,7 @@
     left:50%;
     z-index: 999999;
 }
-#spin_all_my_teams {
-     position: absolute;
-    top:50%;
-    left:50%;
-    z-index: 999999; 
-}
+
 #spin_all_external_teams {
      position: absolute;
     top:50%;
@@ -138,6 +139,12 @@
     font-size: 13px;
     width: 125px;
     margin-top: 130px;
+}
+.no_assignTask_icon {
+    margin:0 auto;
+    font-size: 13px;
+    width: 50%;
+    margin-top: 50px;
 }
 #allgoals_point{
     overflow-y:scroll; 
@@ -275,7 +282,11 @@
     overflow-y: scroll;
 
 }
-
+#spin_all_my_teams {
+    position: absolute;
+    top:50%;
+    left:50%;
+}
 #activities li{
  color: black;
  font-size: 12px;
@@ -431,22 +442,18 @@ background: white;
         #activities li{
         height:10vh;
         }
+    .box_part {
+    width:150%;
+    }
 } 
-@media screen and (max-width: 991px) {
-    .Dashboard{
-         overflow-y:scroll;
-         height: 120vh;
-     }
-     .dashboard_holder {
-            width:103.2%;
-        }
-} 
-
 
 @media screen and (max-width: 768px) {
      .dashboard_holder {
             width:104.2%;
         }
+    .box_part {
+    width:170%;
+    }
 } 
 @media screen and (max-width: 640px) {
      .dashboard_holder {
@@ -459,7 +466,7 @@ background: white;
             width:107%;
         }
     .box_part {
-        width:200%;
+        width:220%;
     }
 } 
 
@@ -467,4 +474,7 @@ background: white;
      .dashboard_holder {
             width:110%;
         }
+          .box_part {
+        width:300%;
+    }
 } 

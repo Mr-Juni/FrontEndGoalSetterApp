@@ -6,10 +6,11 @@
            width: 60%;
         }
         #con {
-
-            height: 69vh;
-      
+            height: 69vh;     
          } 
+    .assignsty {
+        height: 85.5vh; overflow-y:scroll; overflow: none; width: 100%;
+    }
        
 }
 
@@ -17,11 +18,13 @@
       #login_form {
            width: 70%;
         }
+
 }
 @media screen and (max-width: 768px) {
     .img img{
         width: 100%;
     }
+
     .main3{
         height:auto;
         width: 100%;
@@ -47,10 +50,10 @@
         width: 100%;
     }
     #con {
-        margin-top: 80px;
+        margin-top: 0px;
         width:100%;
         margin-left: 0%;
-        height: 75vh;
+        height: 100vh;
   
      } 
    
@@ -82,7 +85,10 @@
       .login_head_text {
         font-size: 22px;
     }
-  
+  #home_img {
+    height: 60vh; 
+    width: 100%;
+    }
 }
 @media screen and (max-width: 576px) {
   

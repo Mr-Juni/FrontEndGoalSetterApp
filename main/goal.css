@@ -50,6 +50,13 @@
     z-index: 999999;
     display: none;
 }
+#spin_assign_task {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    z-index: 999999;
+    display: none;
+}
 #spin_bx_del_goal {
     position: absolute;
     height:100%;

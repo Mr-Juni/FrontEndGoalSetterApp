@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="main/css/bootstrap.min.css">
   <link rel="stylesheet" href="main/animate.css">
   <link rel="stylesheet" href="main/style.css">
+  <link rel="stylesheet" href="main/responsive.css">
   <link rel="stylesheet" href="main/part_2.css">
   <link rel="stylesheet" href="fontawesome-free-5.6.1-web/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -193,13 +194,7 @@
                 <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_goal_title"></p>
 
                 <div class="row">
-                  <div class="col-6">
-                    <label style="color:#3768a0;">Begin date :</label>
-                    <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                      id="begin_date" type="date" value="">
-                    <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_goal_begin"></p>
-                  </div>
-                  <div class="col-6">
+                  <div class="col-12">
                     <label style="color:#3768a0;">Due Date :</label>
                     <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
                       id="due_date" type="date" value="">
@@ -214,7 +209,7 @@
                       <option value="Challenging">Challenging</option>
                       <option value="Difficult">Difficult</option>
                     </select>
-                    <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control"
+                    <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="3" cols="48" class="form-control"
                       id="description" placeholder="How do you want to acheive this goal?"></textarea>
                     <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_goal_desc"></p>
                   </div>
@@ -291,31 +286,30 @@
           </div>
          
           <!--All assigned Task-->
-          <div class="tab-pane fade" id="v-pills-assigned_task" role="tabpanel" aria-labelledby="v-pills-assigned_task-tab"
-            style="height: 85.5vh;">
+          <div class="tab-pane fade assignsty" id="v-pills-assigned_task" role="tabpanel" aria-labelledby="v-pills-assigned_task-tab" style="height: 85.5vh;">
             <div class="modal-header">
               <h4><img id="goal_icon" style="width:40px; height:40px;" src="images/task.png"> Assigned Tasks</h4>
             </div>
-            <div id="external_team">
-              <div class="spinner-border text-muted" id="spin_all_my_teams"></div>
-              <div style="height:10px;"></div>
-              <div class="container-fluid">
-                <div class="row  goal_plate box_part" style="font-size:10px;">
-                  <div class="col-3" style="margin-top:15px; font-weight: bold;">
-                    <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Task:</span> Authentication
-                  </div>
-                  <div id="tiny_font" class="col-4" style="margin-top:15px;font-weight: bold;">
-                    <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Goal:</span> Build Eccomerce
-                  </div>
-                  <div id="tiny_font" class="col-3" style="margin-top:15px;font-weight: bold;">
-                    <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Created:</span> 2019-04-06
-                  </div>             
-                  <div class="col col-2" style="margin-top:5px;">
-                    <a class="btn" style="font-size:10px;" href="goals.html?goal=${goal.id}">View</a>
-                  </div>
-                </div>
+            <div id="assign_to_spot">
+              <div id="assign_spin_holder">
+                <div class="spinner-border text-muted" id="spin_assign_spinner_1"></div>
+              </div>
+             
+              <p style="margin:0; text-align: center;">Assigned Task To Members</h3>
+              <div class="assign_design" id="assign_to_show">
+                     
               </div>
             </div>
+
+              <div id="assign_from_spot">
+                <p style="margin:0; text-align: center;">Assigned Task From Members</p>
+                  <div id="assign_spin_holder">
+                    <div class="spinner-border text-muted" id="spin_assign_spinner_2"></div>
+                  </div>
+                <div class="assign_design" id="assign_from_show">
+           
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -423,11 +417,6 @@
             <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
               Close
             </button>
-            <!-- <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal">
-                <button class="fa fa-pen btn btn-primary" type="button"  data-toggle="modal" data-target="#myModal" data-save="modal"> 
-                  Edit
-                </button><br>
-            </ANY> -->
           </div>
           <!-- Modal body -->
 
@@ -443,14 +432,7 @@
 
               
               <div class="row">
-                <div class="col-6">
-
-                  <label style="color:#3768a0;">Begin date :</label>
-                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                    id="task_begin_date" type="date" value="">
-                  <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begin"></p>
-                </div>
-                <div class="col-6">
+                <div class="col-12">
                   <label style="color:#3768a0;">Due Date :</label>
                   <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
                     id="task_due_date" type="date" value="">
@@ -716,7 +698,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">External Team / Member</h5>
+        <h5 class="modal-title">External Team / Members</h5>
         <button style="padding:5px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -759,12 +741,91 @@
     </div>
   </div>
 </div>
+
+
+  </div>
+  <!-- --------------------------This block show all asigned to data-----------////////////////////////////////////////////////////////////////////////////////////////////////////////////////////------------------------------>
+  <div class="modal fade" id="assignToInfo" style="z-index:99999;">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="task_title_assign"><img id="goal_icon" src="images/text_loader.gif"></h5>
+          <button style="padding:5px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <div class="scroll_design">
+            <div class="profile-name col-12 text-center">
+              <img id="assign_user_image" src="images/text_loader.gif" />
+            </div>
+            <div class="profile-name col-12 text-center">
+              <h4 id="assign_name"></h4>
+            </div>
+            <table class="table" style="color:#2d80ce">
+              <tbody id="task_detail">
+                <tr>
+                  <td>Task Status:</td>
+                  <td id="task_status"></td>
+                </tr>
+                <tr>
+                  <td>Reminder:</td>
+                  <td id="task_reminder"></td>
+                </tr>
+                <tr>
+                  <td>Begin Time:</td>
+                  <td id="task_begin"></td>
+                </tr>
+                <tr>
+                  <td>Due Time:</td>
+                  <td id="task_due"></td>
+                </tr>
+                <tr>
+                  <td>Due Date:</td>
+                  <td id="task_duedate"></td>
+                </tr>
+                <tr>
+                  <td>Goal Name:</td>
+                  <td id="goal_name"></td>
+                </tr>
+                <tr>
+                  <td>Goal Status:</td>
+                  <td id="goal_status"></td>
+                </tr>
+                <tr>
+                  <td>Goal Due Date</td>
+                  <td id="goal_due"></td>
+                </tr>
+                <tr>
+                  <td>Email :</td>
+                  <td id="assign_email"></td>
+                </tr>
+                <tr>
+                  <td>Phone :</td>
+                  <td id="assign_phone"></td>
+                </tr>
+            
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <input id="assigned_task_id" type="hidden" value="" >
+          <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#assignedChat">Chat</button>
+          <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#completeTask">Mark Completed</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- --------------------------Modal view Chat -----------////////////////////////////////////////////////////////////////////////////////////////////////////////////////////------------------------------>
 <div class="modal fade" id="chat">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered" style="z-index:99999;">
     <div class="modal-content">
       <div class="modal-header">
-        <img id="chat_image" src="images/text_loader.gif" />
+        <img class="chat_image" id="chat_image" src="images/text_loader.gif" />
         <h5 class="modal-title" id="chat_name">
           <img  src="images/text_loader.gif" />
         </h5>
@@ -789,8 +850,46 @@
             <input type="hidden" value="" id="rel_id_chat" >
             <textarea class="form-control" id="chat_msg" placeholder="Type a message"></textarea>
             <button id="send_chat"
-                     type="submit" class="btn btn-primary" data-toggle="modal" data-target="#chat">
+                     type="submit" class="btn btn-primary" data-toggle="modal" data-target="#assignedChat">
                      Send <i style="color:skyblue;" class="fa fa-paper-plane" aria-hidden="true"></i>            
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- --------------------------Modal Chat For Aissigned Task -----------////////////////////////////////////////////////////////////////////////////////////////////////////////////////////------------------------------>
+<div class="modal fade" id="assignedChat" style="z-index:99999;">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img class="chat_image" id="assign_chat_image" src="images/text_loader.gif" />
+          <h5 class="modal-title chat_name" id="assign_chat_name">
+            <img src="images/text_loader.gif" />
+          </h5>
+        <div id="presence_status">
+          <div style="margin-top:20px; padding:5px; border-radius:200px; background: lightgreen;"></div>
+          <!-- <div style="margin-top:15px;padding:5px; border-radius:200px; background: red;"></div> -->
+        </div>
+        <button style="padding:5px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="scroll_design">
+          <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_chat"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div id="chat_text" style=" width:100%;">
+          <form id="chat_data">
+            <input type="hidden" value="" id="assigned_id_chat">
+            <textarea class="form-control" id="chat_msg" placeholder="Type a message"></textarea>
+            <button id="send_chat" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#chat">
+              Send <i style="color:skyblue;" class="fa fa-paper-plane" aria-hidden="true"></i>
             </button>
           </form>
         </div>
@@ -819,10 +918,44 @@
       </div>
     </div>
   </div>
+<!-- Complete  Task-->
+<div class="container mt-4">
+  <div class="modal fade" id="completeTask">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div id="show_com" class="msg_alert_box .cls">
 
+        </div>
+        <div id="spin_bx_com">
+          <div class="spinner-border text-muted" id="spin_edit"></div>
+        </div>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="bigName2">Complete Task</h4>
+          <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="completeTask">
+            <div class="row">
+              <div class="col-12">
+                <label style="color:#3768a0;">Are you sure this task is completed ?</label>
+                <input id="complete_task_status" type=hidden" value="">
+                <input id="complete_task_id" type=hidden" value="">
+                <input id="complete_goal_id" type=hidden" value="">
+                <button type="submit" name="register" id="registe" style="width:100%;">Strike Complete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <!--Delete Member-->
     <div class="container mt-4">
-      <div class="modal fade" id="delMember">
+      <div class="modal fade" id="delMember" >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div id="show_member_del" class="msg_alert_box cls">
@@ -869,6 +1002,7 @@
   <script src="js/count.js"></script>
   <script src="js/teamjs/team.js"></script>
   <script src="js/teamjs/externalTeam.js"></script>
+  <script src="js/teamjs/showassignTask.js"></script>
 </body>
 
 </html>
@@ -917,6 +1051,7 @@
     $(document).on("click", "#show_goal_dash", function () {
       $("#show_goal_dash").hide();
     });
+    //This onclick event takes the member information from the view button in the externalTeam.js file
     $(document).on("click", '.member_view', function () {
       var rel_id = $(this).data('getrelid');
       var member_id = $(this).data('getuserid');
@@ -942,5 +1077,56 @@
 
       //  new Date().toLocaleDateString();
     });
+
+  $(document).on("click", '.assign_to_view', function () {
+      var task_id = $(this).data('gettaskid');
+      var assign_id = $(this).data('assignid');
+      var assign_name = $(this).data('username');
+      var assign_phone = $(this).data('phone');
+      var assign_email = $(this).data('email'); 
+      var assign_user_image = $(this).data('userimage');
+
+      var assign_task_title = $(this).data('tasktitle'); 
+      var task_status = $(this).data('taskstatus'); 
+       var task_stat = $(this).data('taskstat'); 
+      var task_reminder = $(this).data('taskreminder');
+      var task_begin = $(this).data('taskbegin'); 
+      var task_due = $(this).data('taskdue'); 
+      var task_duedate = $(this).data('taskduedate');
+
+       var goal_id = $(this).data('goalid');
+      var goal_name = $(this).data('goalname');
+      var goal_status = $(this).data('goalstatus'); 
+      var goal_duedate = $(this).data('goalduedate'); 
+
+      $("#member_id_chat").val(assign_id)
+      $("#assign_name").html(assign_name);
+      $("#assign_phone").html(assign_phone);
+      $("#assign_email").html(assign_email);
+
+      $("#assign_chat_name").html(assign_name + "&nbsp;");
+      $("#assigned_id_chat").val(assign_id);
+
+      $("#assigned_task_id").val(task_id);
+      $("#complete_task_id").val(task_id);
+      $("#complete_task_status").val(task_stat);
+      $("#task_title_assign").html(assign_task_title);
+      $("#task_status").html(task_status);
+      $("#task_reminder").html(task_reminder);
+      $("#task_begin").html(task_begin);
+      $("#task_due").html(task_due);
+      $("#task_duedate").html(task_duedate);
+
+      $("#complete_goal_id").val(goal_id);
+      $("#goal_name").html(goal_name);
+      $("#goal_status").html(goal_status);
+      $("#goal_due").html(goal_duedate);
+      document.getElementById('assign_user_image').src = "http://res.cloudinary.com/getfiledata/image/upload/w_200,c_thumb,ar_4:4,g_face/" + assign_user_image;
+      document.getElementById('assign_chat_image').src = "http://res.cloudinary.com/getfiledata/image/upload/w_200,c_thumb,ar_4:4,g_face/" + assign_user_image; +"&nbsp;"
+    
+
+      //  new Date().toLocaleDateString();
+    });
+ 
   });
 </script>

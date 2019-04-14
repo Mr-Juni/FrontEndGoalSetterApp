@@ -240,7 +240,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chat">Chat</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assignTask">Assign Task</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assignTask">Assign Tasks</button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delMember">Delete</button>
                 </div>
             </div>
@@ -298,38 +298,53 @@
         </div>
     </div>
     </div>
-    <!--create-->
-
+    <!-- --------------------------Assign Task------------------------>
     <div class="modal fade" id="assignTask">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div id="spin_bx_task_edit">
-                    <div class="spinner-border text-muted" id="spin_edit"></div>
+                <div id="spin_assign_task">
+                    <div id="spin_edit"><img id="goal_icon" style="max-width:50px; max-height:50px;" src="images/member_loader.gif"></div>
                 </div>
-                <div id="show_task_edit" class="msg_alert_box .cls">
+                <div id="show_assign_detail" class="msg_alert_box cls">
 
                 </div>
                 <div class="modal-header">
-                    <h4 class="modal-title">Assign Task</h4>
-                    <a href="" class="btn btn-danger" data-dismiss="modal">Close</a>
+                    <h5 class="modal-title" >
+                        Assign Tasks <i style="color:black;font-size:15px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <span id="name_assign"></span>
+                    </h5>
+                    <button style="padding:5px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <label style="color:#3768a0;">Select Goal:</label><br>
-                                    <select style="border:1px solid black; width: 100%; color:black" class="form-control" id="goal_assign">
-                                    </select>
-                                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title_edit"></p>
-                                </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <select style="border:1px solid black; width: 100%; color:black" 
+                                    class="form-control" id="goal_assign">
+                                    
+                                </select>
                             </div>
+                            <div class="col-12">
+                                <p style="text-align:center;margin: 0;" id="assign_place"></p>
+                                <p style="text-align:center;" id="assign_note"></p>
+                                <div id="add_assign" class="col-12 scroll_design" style="height:27vh;">
+                                    
+                                </div>
+                                <p style="text-align:center;margin: 0;" id="revert_place"></p>
+                                <p style="text-align:center;" id="revert_note"></p>
+                                <div id="remove_assign" class="col-12 scroll_design" style="height:27vh;">
+                                     
+                                </div>
+                           </div>
                         </div>
+                        <input id="member_id_assign" type="hidden" value="">
+                    </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Complete  Goal-->
     <div class="container mt-4">
@@ -516,6 +531,7 @@
             $("#registe").show();
             $("#show_task_edit").hide();
             $("#show_member_del").hide();
+            $("#show_assign_detail").hide();
         });
         $(document).on("click", "#show_goal_dash", function () {
             $("#show_goal_dash").hide();
@@ -526,6 +542,14 @@
         $(document).on("click", '#addMember', function () {
             var member_id = $(this).data('getmemid');
              addNewMember(member_id);
+        });
+         $(document).on("click", '#assignMemberTask', function () {
+            var task_id = $(this).data('gettaskid');
+            assignTask(task_id);
+        });
+        $(document).on("click", '#revertMemberTask', function () {
+            var task_id = $(this).data('gettaskid');
+            revertTask(task_id);
         });
         $(document).on("click", '.member_view', function () {
             var rel_id = $(this).data('getrelid');
@@ -544,6 +568,8 @@
             $("#member_phone").html(member_phone);
             $("#member_email").html(member_email);
             $("#member_created").html(member_created);
+             $("#name_assign").html(member_name);
+           
 
              document.getElementById('member_user_image').src =  "http://res.cloudinary.com/getfiledata/image/upload/w_200,c_thumb,ar_4:4,g_face/" + member_user_image;
              document.getElementById('chat_image').src = "http://res.cloudinary.com/getfiledata/image/upload/w_200,c_thumb,ar_4:4,g_face/" + member_user_image; +"&nbsp;"

@@ -29,14 +29,10 @@ function loadExTeams() {
                     _("#external_teams").innerHTML += `
                        <div style="height:10px;"></div>
                         <div class="container-fluid">
-                            <div class="row  goal_plate box_part" style="font-size:9px;">
+                            <div class="row goal_plate box_part" style="font-size:9px;">
                             <div class="col-3" style="margin-top:20px; font-weight: bold;">
                                 <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Team :</span>
                                 ${external_team[counter][1].team_name}
-                            </div>
-                            <div id="tiny_font" class="col-3" style="margin-top:20px;font-weight: bold;">
-                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Added:</span>
-                                 ${new Date(external_team[counter][2].created_at).toLocaleDateString()}
                             </div>
                             <div id="tiny_font" class="col-4" style="margin-top:15px;font-weight: bold;">
                                 <span>
@@ -48,6 +44,10 @@ function loadExTeams() {
                                  ${external_team[counter][0].name}&nbsp;
                                
                             </div>
+                             <div id="tiny_font" class="col-3" style="margin-top:20px;font-weight: bold;">
+                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Added:</span>
+                                 ${new Date(external_team[counter][2].created_at).toLocaleDateString()}
+                             </div>
                               <div id="btn_reduce" class="col col-1" style="margin-top:20px;">
                                     <a class="btn btn_view member_view"  
                                     data-getuserid="${external_team[counter][0].id}" 
@@ -96,7 +96,7 @@ if (delete_member) {
         }
 
         _("#spin_bx_task_delete").style.display = "block";
-        const deleteLink = "https://goalsetterapi.herokuapp.com/api/teams/member/" + rel_id + "/delete";
+        const deleteLink = "https://goalsetterapi.herokuapp.com/api/teams/member/"+rel_id+"/delete";
 
 
         axios.delete(deleteLink, options).then(function (response) {

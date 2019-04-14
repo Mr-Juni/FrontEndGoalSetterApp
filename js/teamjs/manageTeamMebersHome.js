@@ -12,7 +12,7 @@ member();
 // View Users Profile
 function member() {
 
-    const teamshowUrl = "https://goalsetterapi.herokuapp.com/api/teams/" + team_id + "/members/show";
+    const teamshowUrl = "https://goalsetterapi.herokuapp.com/api/teams/"+team_id+"/members/show";
 
     const token = localStorage.getItem("goaltoken");
 
@@ -45,15 +45,15 @@ function member() {
                                  <div style="position:absolute;padding:5px; width:10px; border-radius:200px; background: lightgreen;"></div>
                                  <img style="border-radius: 50px;" src="http://res.cloudinary.com/getfiledata/image/upload/w_40,c_thumb,ar_4:4,g_face/${team_memebers[counter][0].user_image}" />
                                 </span>
-                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Member name :</span> 
+                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Name:</span> 
                                 ${team_memebers[counter][0].name}
                                 </div>
                                 <div id="tiny_font" class="col-5" style="margin-top:15px;font-weight: bold;">
-                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Created at :</span> 
+                                <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Added:</span> 
                                 ${new Date(team_memebers[counter][1].created_at).toLocaleDateString()}
                                 </div>
                                   <div id="btn_reduce" class="col col-2" style="margin-top:15px;">
-                                    <a class="btn member_view"  data-getrelid="${team_memebers[counter][1].id}"   data-getmemid="${team_memebers[counter][1].member_id}" data-getname="${team_memebers[counter][0].name}" 
+                                    <a class="btn member_view"  data-getrelid="${team_memebers[counter][1].id}" data-getmemid="${team_memebers[counter][1].member_id}" data-getname="${team_memebers[counter][0].name}" 
                                     data-phone="${team_memebers[counter][0].phone_number}" data-email="${team_memebers[counter][0].email}" data-userimage="${team_memebers[counter][0].user_image}"  
                                     data-getadded="${new Date(team_memebers[counter][1].created_at).toLocaleDateString()}" 
                                     data-toggle="modal" data-target="#memberInfo">View</a>
@@ -69,6 +69,7 @@ function member() {
               data-target="#memberstat"> Statistics </button>
            </div>
         `;
+       
     }).catch(function (err) {
 
     })
@@ -120,7 +121,7 @@ function member() {
                             <div class="row  goal_plate box_part">
                                 <div class="col-5" style="margin-top:5px; font-weight: bold;">
                                 <span>
-                                 <img style="border-radius: 50px;" src="http://res.cloudinary.com/getfiledata/image/upload/w_40,c_thumb,ar_4:4,g_face/${add_member.user_image}"
+                                 <img style="border-radius: 50px;" src="http://res.cloudinary.com/getfiledata/image/upload/w_40,c_thumb,ar_4:4,g_face/${add_member.user_image}">
                                 </span> 
                                 <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Name:</span> 
                                 ${add_member.name}

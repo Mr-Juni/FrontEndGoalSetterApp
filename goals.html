@@ -132,13 +132,7 @@
                   <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_title"></p>
             
                   <div class="row">
-                    <div class="col-6">
-                      <label style="color:#3768a0;">Begin date :</label>
-                      <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_begin_date"
-                        type="date" value="">
-                      <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_goal_begin"></p>
-                    </div>
-                    <div class="col-6">
+                    <div class="col-12">
                       <label style="color:#3768a0;">Due Date :</label>
                       <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_due_date"
                         type="date" value="">
@@ -218,52 +212,48 @@
           <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title"></p>
     
           <div class="row">
-            <div class="col-6">
-              <label style="color:#3768a0;">Begin date :</label>
-              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_begin_date"
-                type="date" value="">
-              <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_begin"></p>
+            <div class="col-4">
+              <label style="color:#3768a0;">Begin Time :</label>
+              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="begin_time" type="time"
+                value="">
+              <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
             </div>
-            <div class="col-6">
-              <label style="color:#3768a0;">Due Date :</label>
-              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_due_date"
-                type="date" value="">
-              <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due"></p>
+            <div class="col-4">
+              <label style="color:#3768a0;">Due Time :</label>
+              <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="due_time" type="time"
+                value="">
+              <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
             </div>
-          </div><br>
+            <div class="col-4">
+                <label style="color:#3768a0;">Due Date :</label>
+                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="task_due_date" type="date"
+                  value="">
+                <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due"></p>
+            </div>
+          </div>
           <div class="row">
-              <div class="col-6">
-                <label style="color:#3768a0;">Begin Time :</label>
-                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                  id="begin_time" type="time" value="">
-                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
-              </div>
-              <div class="col-6">
-                <label style="color:#3768a0;">Due Time :</label>
-                <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                  id="due_time" type="time" value="">
-                <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
-              </div>
+            <div class="col-12">
+              <select class="form-control" id="addReminder">
+                <option value="">Select Reminder</option>
+                <option value="30m">Every 30 minutes</option>
+                <option value="1h">Every hour</option>
+                <option value="3h">Every 3 hours</option>
+                <option value="6h">Every 6 hours</option>
+                <option value="Ed">Everyday</option>
+                <option value="E3d">Every 3 days</option>
+                <option value="Ew">Every Week</option>
+                <option value="Em">Every month</option>
+              </select>
             </div>
+          </div>
           <div class="row">
               <div class="col-12">
-                <label style="color:#3768a0;">Reminder :</label>
-                <select class="form-control" id="addReminder">
-                  <option value=""></option>
-                  <option value="30m">Every 30 minutes</option>
-                  <option value="1h">Every hour</option>
-                  <option value="3h">Every 3 hours</option>
-                  <option value="6h">Every 6 hours</option>
-                  <option value="Ed">Everyday</option>
-                  <option value="E3d">Every 3 days</option>
-                  <option value="Ew">Every Week</option>
-                  <option value="Em">Every month</option>
-                </select>
+              
               </div>
             </div>
           <div class="row">
             <div class="col-12">
-              <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="2" cols="48" class="form-control" id="task_description"
+              <textarea style="border: 1px solid #3768a0; color:#3768a0;" rows="3" cols="48" class="form-control" id="task_description"
                 placeholder="Your task description..."></textarea>
               <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc"></p>
             </div>
@@ -316,19 +306,27 @@
             <table class="table" style="color:#2d80ce">
               <tbody id="task_detail">
                 <tr>
-                  <td>BEGIN DATE</td>
-                  <td id="task_begin"></td>
-                </tr>
-                <tr>
-                  <td>DUE DATE</td>
-                  <td id="task_due"></td>
-                </tr>
-                <tr>
-                  <td>STATUS</td>
+                  <td>Status</td>
                   <td id="task_status"></td>
                 </tr>
                 <tr>
-                  <td>DATE CREATED</td>
+                  <td>Begin time</td>
+                  <td id="beg_time"></td>
+                </tr>
+                  <tr>
+                    <td>Due time</td>
+                    <td id="duee_time"></td>
+                  </tr>
+                  <tr>
+                    <td>Reminder</td>
+                    <td id="task_reminder"></td>
+                  </tr>
+                <tr>
+                  <td>Due date</td>
+                  <td id="task_due"></td>
+                </tr>          
+                <tr>
+                  <td>Date Created</td>
                   <td id="task_created"></td>
                 </tr>
               </tbody>
@@ -342,6 +340,7 @@
           </div>
       </div>
       <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#completeTask">Mark Completed</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taskedit">Edit</button>
         <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#del_one_task">Delete</button>
       </div>
@@ -419,43 +418,37 @@
               <div class="row">
                 <div class="col-12">
                   <label style="color:#3768a0;">Title :</label><br>
-                  <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#2d80ce" class="form-control" id="title"
+                  <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#2d80ce" class="form-control" id="edit_task_title"
                     type="text">
                   <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_title_edit"></p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-6">
-                  <label  style="color:#3768a0;">Begin date :</label>
-                  <input class="form-control" style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="begin_date" type="date" value="">
-                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_begin_edit"></p>
-                </div>
-                <div class="col-6">
-                  <label style="color:#3768a0;">Due Date :</label>
-                  <input class="form-control" style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="due_date"
-                    type="date" value="">
-                  <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due_edit"></p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <label style="color:#3768a0;">Begin Time :</label>
-                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                    id="begin_time" type="time" value="">
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_task_begin_time" type="time"
+                    value="">
                   <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_begintime"></p>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                   <label style="color:#3768a0;">Due Time :</label>
-                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control"
-                    id="due_time" type="time" value="">
+                  <input style="background-color:#ffffff; border:1px solid; color:#3768a0" class="form-control" id="edit_task_due_time" type="time"
+                    value="">
                   <p style="color:tomato; margin:0; font-weight: bold; font-size: 10px;" id="err_task_duetime"></p>
                 </div>
+                  <div class="col-4">
+                    <label style="color:#3768a0;">Due date :</label>
+                    <input class="form-control" style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="edit_task_due_date" type="date"
+                      value="">
+                    <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_due_edit"></p>
+                  </div>
               </div>
+             
               <div class="row">
                 <div class="col-12">
                   <label style="color:#3768a0;">Reminder :</label>
                   <select class="form-control" id="editReminder">
-                    <option value=""></option>
+                    <option value="">Select Reminder</option>
                     <option value="30m">Every 30 minutes</option>
                     <option value="1h">Every hour</option>
                     <option value="3h">Every 3 hours</option>
@@ -471,7 +464,7 @@
               <div class="row">
                 <div class="col-12">
                   <label style="color:#2d80ce">How do you want to acheive this goal?</label>
-                  <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="2" cols="48" class="form-control" id="description"></textarea>
+                  <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="2" cols="48" class="form-control" id="edit_task_description"></textarea>
                   <p style='color:tomato; margin:0; font-weight: bold; font-size: 10px;' id="err_task_desc_edit"></p>
                 </div>
               </div>
@@ -525,6 +518,41 @@
       </div>
     </div>
   </div>
+
+    <!-- Complete  Task-->
+    <div class="container mt-4">
+      <div class="modal fade" id="completeTask">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div id="show_com" class="msg_alert_box .cls">
+    
+            </div>
+            <div id="spin_bx_com">
+              <div class="spinner-border text-muted" id="spin_edit"></div>
+            </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" id="bigName2">Complete Task</h4>
+              <button class="btn btn-primary cls" type="button" data-target="#myModal" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="completeTask">
+                <div class="row">
+                  <div class="col-12">
+                    <label style="color:#3768a0;">Are you sure this task is completed ?</label>
+                    <input id="task_status_complete" type="hidden" value="">
+                    <input id="complete_task_id" type="hidden" value="">
+                    <button type="submit" name="register" id="registe" style="width:100%;">Strike Complete</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!--Delete Task-->
   <div class="container mt-4">
@@ -601,26 +629,34 @@
          $(document).on("click", '.task_view', function () {
               var task_id = $(this).data('getid');
               var task_title = $(this).data('gettitle');
-              var task_begin = $(this).data('getbegin');
+              var task_beginTime = $(this).data('getbegintime');
+              var task_dueTime = $(this).data('getduetime');
+              var task_reminder = $(this).data('getreminder');
               var task_due = $(this).data('getdue');
               var task_status = $(this).data('getstatus');
+              var task_status_complete = $(this).data('taskstatus');
               var task_desc = $(this).data('getdesc');
               var task_created = $(this).data('getcreated');
-
+  
 
               $("#task_id_edit").val(task_id);
+              $("#complete_task_id").val(task_id)
               $("#task_id_delete").val(task_id);
               $("#task_name").html(task_title);
-              $("#task_begin").html(task_begin);
+              $("#beg_time").html(task_beginTime);
+              $("#duee_time").html(task_dueTime);
+              $("#task_reminder").html(task_reminder);
               $("#task_due").html(task_due);
               $("#task_status").html(task_status);
               $("#task_desc").html(task_desc);
               $("#task_created").html(task_created);
 
-              $("#title").val(task_title);
-              $("#begin_date").val(task_begin);
-              $("#due_date").val(task_due);
-              $("#description").val(task_desc);
+              $("#edit_task_title").val(task_title);
+              $("#edit_task_description").val(task_desc);
+              $("#edit_task_begin_time").val(task_beginTime);
+              $("#edit_task_due_time").val(task_dueTime);
+              $("#edit_task_due_date").val(task_due);
+              $("#task_status_complete").val(task_status_complete);
 
             
           //  new Date().toLocaleDateString();

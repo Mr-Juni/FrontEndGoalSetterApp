@@ -42,6 +42,15 @@
     align-items: center;
 
 }
+#show_assign_detail {
+    display: flex;
+    justify-content: center;
+    height:auto;
+     width: 40%;
+     margin: auto;
+    align-items: center;
+
+}
 .sign{
    height: 125vh;
 }

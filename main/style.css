@@ -29,7 +29,7 @@
     width: 100%;
     height: 100vh;
 }
-#chat_image {
+.chat_image {
     width: 50px;
     border-radius: 50px; 
 }
@@ -54,6 +54,20 @@
      border-top-right-radius: 100px; 
      border-bottom-right-radius: 100px;
 }
+#assign_spin_holder {
+    margin: 0 auto;
+    width: 0%;
+}
+#spin_assign_spinner_1 {
+    z-index: 999999; 
+    position: absolute;
+    margin-top: 100px;
+}
+#spin_assign_spinner_2 {
+    z-index: 999; 
+    position: absolute;
+    margin-top: 100px;
+}
 #spin_bx_task_delete {
     position: absolute;
     height:100%;
@@ -61,7 +75,7 @@
     z-index: 999999;
     display: none; 
 }
-#chat_name {
+.chat_name {
     margin-top: 10px;
 }
 #show_image {
@@ -88,18 +102,24 @@
 #img_off:hover {
    transform: scale(1.02);
 }
+#home_img {
+    /* Full height */
+  height: 100vh; 
+  width: 100%;
 
+}
 #con2 {
     margin-top: 10%;
     position: absolute;
-    z-index:999999;
+    z-index:99;
 }
 #con{
     margin-top: 8%;
     position: absolute;
-    z-index:999999;
+    z-index:99;
+    font-size: 25px;
     text-align: center;
-    box-shadow: 0 0 10px #2d80ce;
+    box-shadow: 0 0 10px grey;
     margin-left: 50%;
     height: 60vh;
     background:rgb(0, 0, 0, 0.5);
@@ -289,7 +309,7 @@ hr{
     background: rgb(0, 0, 0, 0.5);
 }
 .box_part {
-    font-size: 12px;
+    font-size: 8px;
 }
 select{
     width: 97.7%;
@@ -462,6 +482,7 @@ h4{
     top:50%;
     left:50%;
 }
+
 #spin_2{
     display:none;
     position: absolute;
@@ -475,19 +496,20 @@ h4{
 }
 /* width */
 #all_goals::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
   }
   
    /* Handle */
   #all_goals::-webkit-scrollbar-thumb {
-    background:#3768a0; 
+    background: #e6e6ee;
+    border: 1px solid skyblue; 
     border-radius: 5px;
+    opacity: 0.5;
   }
   
   /* Handle on hover */
   #all_goals::-webkit-scrollbar-thumb:hover {
-    background: #e6e6ee; 
-    border: 1px solid #3768a0; 
+    background: #fff; 
   }
  
 
@@ -518,6 +540,36 @@ overflow-y:scroll; overflow: none; width: 100%; height: 60vh;
   
   /* Track */
 
+
+  
+.assign_design{
+overflow-y:scroll; overflow: none; width: 100%; height: 33vh;
+ background: #e6e6ee;
+}
+/* width */
+.assign_design::-webkit-scrollbar {
+width: 6px;
+}
+
+/* Handle */
+.assign_design::-webkit-scrollbar-thumb {
+background: #e6e6ee;
+border: 1px solid skyblue; 
+border-radius: 5px;
+opacity: 0.5;
+}
+
+/* Handle on hover */
+.assign_design::-webkit-scrollbar-thumb:hover {
+background: white; 
+}
+
+/* width */
+#allgoals_point::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
   /* Handle */
   #allgoals_point::-webkit-scrollbar-thumb {
     background: #e6e6ee;

@@ -47,15 +47,14 @@ function oneGoalget() {
 
         _("#edit_title").value = `${goal.title}`;
         _("#edit_description").value = `${goal.description}`;
-        _("#edit_begin_date").value = `${goal.begin_date}`;
         _("#edit_due_date").value = `${goal.due_date}`;
         _("#edit_level").value = `${goal.level}`;
 
 
         if (goal.goal_status == 0) {
-            var status = "<p style='color:tomato;'>Not Completed</p>"
+            var status = "<p style='color:tomato;margin:0;'>Not Completed</p>"
         } else if (goal.goal_status == 1) {
-            var status = "<p style='color:green;'>Completed</p>"
+            var status = "<p style='color:green;margin:0;'>Completed</p>"
         }
         //Insert the goal status into the complete hidden input 
         _('#goal_status').value = `${goal.goal_status}`;
@@ -63,20 +62,17 @@ function oneGoalget() {
         _('#goalName').innerHTML = `${goal.title}`;
         _("#goal_detail").innerHTML = `
             <tr>
-              <td>BEGIN DATE</td>
-              <td>${goal.begin_date}</td>
-            </tr>
-            <tr>
-              <td>DUE DATE</td>
-              <td>${goal.due_date}</td>
+              <td>STATUS</td>
+              <td>${status}</td>
             </tr>
             <tr>
               <td>LEVEL</td>
               <td>${goal.level}</td>
             </tr>
-            <tr>
-              <td>STATUS</td>
-              <td>${status}</td>
+            
+             <tr>
+              <td>DUE DATE</td>
+              <td>${goal.due_date}</td>
             </tr>
             <tr>
               <td>DATE CREATED</td>

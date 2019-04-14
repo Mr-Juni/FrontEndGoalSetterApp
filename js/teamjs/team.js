@@ -144,7 +144,7 @@ function loadTeams() {
                    _("#my_teams").innerHTML += `
                         <div style="height:10px;"></div>
                             <div class="container-fluid">
-                            <div class="row  goal_plate box_part">
+                            <div class="row  goal_plate box_part" style="font-size:9px;">
                                 <div class="col-5" style="margin-top:15px; font-weight: bold;">
                                 <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Team:</span> 
                                 ${team_data.team_name}
@@ -153,8 +153,8 @@ function loadTeams() {
                                 <span style="border:1px solid rgb(117, 223, 117); padding: 5px;">Created:</span> 
                                 ${new Date(team_data.created_at).toLocaleDateString()}
                                 </div>
-                                <div class="col col-2" style="margin-top:15px;">
-                                <a class="btn" href="team.html?team_id=${team_data.id}">View</a>
+                                <div id="btn_reduce" class="col col-2" style="margin-top:15px;">
+                                <a  class="btn btn_view member_view" href="team.html?team_id=${team_data.id}">View</a>
                                 </div>
                             </div>
                         </div>                   
@@ -168,10 +168,6 @@ function loadTeams() {
                 </div>
         `;
     }).catch(function (err) {
-            setTimeout(function () {
-                _("#spin_all_my_teams").style.display = "none";
-                loadTeams();
-            }, 2000)
     })
 
 }
